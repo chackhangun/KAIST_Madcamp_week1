@@ -16,13 +16,10 @@ import com.camp.project1.databinding.FragmentGalleryBinding;
 
 public class GalleryFragment extends Fragment {
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View fragmentgallery = inflater.inflate(R.layout.fragment_gallery, container, false);
-
-
         return fragmentgallery;
     }
 

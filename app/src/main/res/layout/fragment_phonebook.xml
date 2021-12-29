@@ -5,16 +5,9 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-<<<<<<< HEAD
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-=======
-        android:id = "@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
->>>>>>> 6dc5a766d9e10a812b32cb482206f12fe077b157
-
     </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>
