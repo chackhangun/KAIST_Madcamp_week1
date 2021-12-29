@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:id = "@+id/linearLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:id = "@+id/photo"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight = "1"
+                android:src = "@mipmap/ic_launcher">
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight = "7"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id = "@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text = "NAME"
+                    android:textSize = "15dp"
+                    android:textColor = "@color/black"
+                    android:textStyle="bold"
+                    ></TextView>
+
+                <TextView
+                    android:id ="@+id/number"
+                    android:layout_width = "wrap_content"
+                    android:layout_height = "wrap_content"
+                    android:includeFontPadding = "false"
+                    android:text = "NUMBER : "
+                    android:textSize = "15dp"
+                    android:textColor = "@color/black"
+                    android:textStyle="bold">
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/call_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:animateLayoutChanges="true">
+
+        <ImageButton
+            android:id="@+id/callbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/call100"
+            android:animateLayoutChanges="true"/>
+
+        <ImageButton
+            android:id="@+id/messagebutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/message96"
+            android:animateLayoutChanges="true"/>
+
+        <ImageButton
+            android:id="@+id/morebutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/more100"
+            android:scaleType="centerInside"
+            android:animateLayoutChanges="true"/>
+    </LinearLayout>
+
+</LinearLayout>
+
