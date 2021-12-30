@@ -1,9 +1,12 @@
 package com.camp.project1.ui.phonebook;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 
@@ -15,30 +18,37 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.camp.project1.Data;
 import android.provider.ContactsContract;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.camp.project1.R;
 import com.camp.project1.RecyclerAdapter;
 
 import java.util.ArrayList;
 
-public class PhonebookFragment extends Fragment {
+public class PhonebookFragment extends Fragment{
 
     public RecyclerAdapter recyclerAdapter;
     public ArrayList<Data> datalist;
     @Nullable
     @org.jetbrains.annotations.Nullable
     public Context ct;
+    public Activity act;
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View fragmentphonebook = inflater.inflate(R.layout.fragment_phonebook, container, false);
+        act = getActivity();
 
         RecyclerView recyclerView = fragmentphonebook.findViewById(R.id.recyclerview);
 
@@ -49,13 +59,16 @@ public class PhonebookFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         recyclerAdapter = new RecyclerAdapter();
+        recyclerAdapter.setActivity(act);
+
         recyclerView.setAdapter(recyclerAdapter);
+
+
         datalist = getContacts(ct);
         recyclerAdapter.addList(datalist);
 
         return fragmentphonebook;
     }
-
 
     public ArrayList<Data> getContacts(Context context){
         ArrayList<Data> dataList = new ArrayList<>();
