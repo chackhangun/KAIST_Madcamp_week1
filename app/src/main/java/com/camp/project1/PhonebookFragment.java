@@ -1,16 +1,13 @@
-package com.camp.project1.ui.phonebook;
+package com.camp.project1;
 
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,19 +15,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.camp.project1.Data;
 import android.provider.ContactsContract;
-import android.widget.Button;
-import android.widget.LinearLayout;
 
-import com.camp.project1.R;
-import com.camp.project1.RecyclerAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -42,17 +33,26 @@ public class PhonebookFragment extends Fragment{
     @org.jetbrains.annotations.Nullable
     public Context ct;
     public Activity act;
-
+    public FloatingActionButton fab;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View fragmentphonebook = inflater.inflate(R.layout.fragment_phonebook, container, false);
+
+
         act = getActivity();
-
-        RecyclerView recyclerView = fragmentphonebook.findViewById(R.id.recyclerview);
-
         ct = container.getContext();//fragment에서 동작할 수 있게 해주는 것.
+        RecyclerView recyclerView = fragmentphonebook.findViewById(R.id.recyclerview);
+        fab = fragmentphonebook.findViewById(R.id.fab_btn);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ct, AddContactActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ct);
 
@@ -67,6 +67,8 @@ public class PhonebookFragment extends Fragment{
         datalist = getContacts(ct);
         recyclerAdapter.addList(datalist);
 
+
+        Intent intent = getIntent();
         return fragmentphonebook;
     }
 

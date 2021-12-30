@@ -25,5 +25,4 @@ public class Data {
         this.number = number;
     }
      */
-
 }

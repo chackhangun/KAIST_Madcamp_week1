@@ -1,4 +1,4 @@
-package com.camp.project1.ui.calendar;
+package com.camp.project1;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

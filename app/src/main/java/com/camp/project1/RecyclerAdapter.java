@@ -36,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public RecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview, parent, false); // 만든 xml을 inflate시키는 동작.
             //새로운 view를 만들어서 view holder에 넣어주기 위함이다. why? view(view)는 xml로 이루어져있고 viewholder가 관리한다. adapter가 필요할 때마다 사용한다.
-            context = parent.getContext();
+            context = parent.getContext(); //////// check
             ViewHolder viewholder =  new ViewHolder(view);
             return viewholder;
         }
@@ -73,6 +73,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             ImageButton more;
             LinearLayout linearlayout;
             LinearLayout calllayout;
+
             String m_number;
 
             private Data data;
@@ -112,7 +113,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 switch (view.getId()) {
                     case R.id.linearLayout:
                         m_number = number.getText().toString();
-
                         if (selectedItems.get(position)) {
                             // 펼쳐진 Item을 클릭 시
                             selectedItems.delete(position);
@@ -126,7 +126,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         if (preposition != -1) {
                             notifyItemChanged(preposition);
                         }
-                        notifyItemChanged(position);
+                        notifyItemChanged(position);//리스트 갱신을 위해 쓰인다.
                         // 클릭된 position 저장
                         preposition = position;
                         break;

@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_phonebook"
-        android:name="com.camp.project1.ui.phonebook.PhonebookFragment"
+        android:name="com.camp.project1.PhonebookFragment"
         android:label="Phonebook"
         tools:layout="@layout/fragment_phonebook" />
 
     <fragment
         android:id="@+id/navigation_gallery"
-        android:name="com.camp.project1.ui.gallery.GalleryFragment"
+        android:name="com.camp.project1.GalleryFragment"
         android:label="Gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/navigation_calendar"
-        android:name="com.camp.project1.ui.calendar.CalendarFragment"
+        android:name="com.camp.project1.CalendarFragment"
         android:label="Calendar"
         tools:layout="@layout/fragment_calendar" />
 </navigation>

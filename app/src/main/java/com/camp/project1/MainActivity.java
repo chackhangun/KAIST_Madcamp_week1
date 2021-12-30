@@ -2,22 +2,11 @@ package com.camp.project1;
 
 
 import android.Manifest;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import com.camp.project1.ui.calendar.CalendarFragment;
-import com.camp.project1.ui.gallery.GalleryFragment;
-import com.camp.project1.ui.phonebook.PhonebookFragment;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -29,14 +18,11 @@ import androidx.core.content.ContextCompat;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
     private PhonebookFragment phonebookFragment;
     private GalleryFragment galleryFragment;
     private CalendarFragment calendarFragment;
     private static final int PERMISSION_NUM = 100;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
