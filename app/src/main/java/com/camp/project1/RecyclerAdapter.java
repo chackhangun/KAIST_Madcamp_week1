@@ -54,10 +54,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public void additem(Data data) {
             temp_data.add(data);
+            System.out.println("size = "+temp_data.size());
         }
 
         public void addList(ArrayList<Data> dataList) {
-            temp_data = null;
             temp_data = dataList;
         }
 
