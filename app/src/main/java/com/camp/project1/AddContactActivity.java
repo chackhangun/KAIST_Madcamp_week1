@@ -2,12 +2,9 @@ package com.camp.project1;
 
 import android.content.ContentUris;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.FileUtils;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
@@ -15,25 +12,11 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONException;
-import org.json.simple.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.File;
-
-
-import java.io.FileWriter;
-import java.io.IOException;
-
-
-
 public class AddContactActivity extends AppCompatActivity implements View.OnClickListener{
     public EditText name;
     public EditText number;
     public Button btn_save;
     public Button btn_cancel;
-    public Contact contactItem;
-    public String filename;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +58,8 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
             case R.id.cancel:
                 startActivity(new Intent(this, MainActivity.class));
                 break;
+
+            case R.id.delete:
         }
     }
 

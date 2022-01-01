@@ -27,37 +27,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.provider.ContactsContract;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class PhonebookFragment extends Fragment{
     public RecyclerAdapter recyclerAdapter;
     public ArrayList<Data> datalist;
-    public ArrayList<Contact> contactList;
     @Nullable
     @org.jetbrains.annotations.Nullable
     public Context ct;
     public Activity act;
     public FloatingActionButton fab;
-    String filename;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View fragmentphonebook = inflater.inflate(R.layout.fragment_phonebook, container, false);
         act = getActivity();
-
-
         ct = getContext();//fragment에서 동작할 수 있게 해주는 것.
         RecyclerView recyclerView = fragmentphonebook.findViewById(R.id.recyclerview);
         fab = fragmentphonebook.findViewById(R.id.fab_btn);
@@ -88,10 +73,9 @@ public class PhonebookFragment extends Fragment{
     public ArrayList<Data> getContacts(Context context){
         ArrayList<Data> dataList = new ArrayList<>();
         ContentResolver resolver = context.getContentResolver();
+
         Uri phoneuri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
-
         String[] projection = {ContactsContract.CommonDataKinds.Phone.CONTACT_ID, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER};
-
         Cursor cursor = resolver.query(phoneuri, projection, null, null, null); //resolver 가 provider에게 정보 요청
 
         if(cursor != null){

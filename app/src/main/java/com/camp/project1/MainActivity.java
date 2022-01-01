@@ -19,7 +19,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import org.jetbrains.annotations.NotNull;
@@ -31,15 +33,14 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-    public int data_number = 0;
-    private PhonebookFragment phonebookFragment;
-    private GalleryFragment galleryFragment;
-    private CalendarFragment calendarFragment;
+    private com.camp.project1.PhonebookFragment phonebookFragment;
+    private com.camp.project1.GalleryFragment galleryFragment;
+    public com.camp.project1.MbtiFragment mbtiFragment;
+    public com.camp.project1.MbtiFragment2 mbtiFragment2;
+    public com.camp.project1.MbtiFragment3 mbtiFragment3;
+    public com.camp.project1.MbtiResult mbtiResult;
+
     private static final int PERMISSION_NUM = 100;
-    SharedPreferences sp;
-    SharedPreferences.Editor editor;
-    public ArrayList<Data> datalist;
-    public Data data;
     public String name;
     public String number;
 
@@ -60,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS}, PERMISSION_NUM);
         }
 
-
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
-        calendarFragment = new CalendarFragment();
-
+        mbtiFragment = new MbtiFragment();
+        mbtiFragment2 = new MbtiFragment2();
+        mbtiFragment3 = new MbtiFragment3();
+        mbtiResult = new MbtiResult();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
     }
@@ -80,31 +82,17 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, galleryFragment).commit();
                     break;
                 case R.id.item_calendar:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, calendarFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiFragment).commit();
                     break;
             }
             return true;
         }
     };
 
-    boolean checkExternalStorage() {
-        String state = Environment.getExternalStorageState();
-        // 외부메모리 상태
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            // 읽기 쓰기 모두 가능
-            Log.d("STATE", "외부메모리 읽기 쓰기 모두 가능");
-            Toast.makeText(getApplicationContext(),"외부메모리 읽기 쓰기 모두 가능",Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)){
-            //읽기전용
-            Log.d("STATE", "외부메모리 읽기만 가능");
-            Toast.makeText(getApplicationContext(),"외부메모리 읽기만 가능",Toast.LENGTH_SHORT).show();
-            return false;
-        } else {
-            // 읽기쓰기 모두 안됨
-            Log.d("STATE", "외부메모리 읽기쓰기 모두 안됨 : "+ state);
-            Toast.makeText(getApplicationContext(),"외부메모리 읽기쓰기 모두 안됨 : "+ state,Toast.LENGTH_SHORT).show();
-            return false;
-        }
+    public void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment).commit();      // Fragment로 사용할 MainActivity내의 layout공간을 선택합니다.
     }
+
 }
