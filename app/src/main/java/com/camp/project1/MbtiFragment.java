@@ -17,11 +17,13 @@ public class MbtiFragment extends Fragment implements View.OnClickListener{
         activity = (MainActivity)getActivity();
 
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) { //초기화 리소스들
         super.onCreate(savedInstanceState);
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {

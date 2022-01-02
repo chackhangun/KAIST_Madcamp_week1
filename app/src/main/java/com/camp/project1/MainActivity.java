@@ -41,9 +41,11 @@ public class MainActivity extends AppCompatActivity {
     public com.camp.project1.MbtiResult mbtiResult;
 
     private static final int PERMISSION_NUM = 100;
+    private static boolean permission_check = false;
+    public static final String PROVIDER_URI = "content://com.camp.project1.ContactProvider";
+
     public String name;
     public String number;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,22 +53,21 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomView = findViewById(R.id.my_navigation);
         bottomView.setOnNavigationItemSelectedListener(listener);
 
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
 
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_NUM);
+        if(permission_check == false){
+            getpermission();
+            permission_check = true;
         }
-
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS}, PERMISSION_NUM);
-        }
-
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
         mbtiFragment = new MbtiFragment();
         mbtiFragment2 = new MbtiFragment2();
         mbtiFragment3 = new MbtiFragment3();
         mbtiResult = new MbtiResult();
+        /*
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
+
+        }*/
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
     }
@@ -95,4 +96,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment).commit();      // Fragment로 사용할 MainActivity내의 layout공간을 선택합니다.
     }
 
+    public void getpermission(){
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MODE_PRIVATE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_NUM);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS}, PERMISSION_NUM);
+    }
 }

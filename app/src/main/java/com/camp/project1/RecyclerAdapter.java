@@ -2,9 +2,11 @@ package com.camp.project1;
 import android.Manifest;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -122,7 +124,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 number.setText(data.getNumber());
                 m_number = data.getNumber();
                 changeVisibility(selectedItems.get(position));
-                changeVisibility2(selectedItems2.get(position));
+                //changeVisibility2(selectedItems2.get(position));
                 linearlayout.setOnClickListener(this);
             }
 
@@ -163,6 +165,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("smsto:"+m_number)));
                         break;
                     case R.id.morebutton:
+
                         break;
 
                     case R.id.modify:
@@ -170,6 +173,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         intent.putExtra("name", mname);
                         intent.putExtra("number", mnumber);
                         activity.startActivity(intent);
+                        break;
+
+                    case R.id.delete:
+                        activity.getContentResolver().delete(Uri.parse(MainActivity.PROVIDER_URI),"name="+name.getText().toString() ,null);
                         break;
                 }
             }

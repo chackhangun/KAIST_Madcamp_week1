@@ -3,6 +3,7 @@ package com.camp.project1;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 
@@ -65,6 +66,18 @@ public class PhonebookFragment extends Fragment{
 
         datalist = getContacts(ct);//ArrayList<Data>를 반환
         recyclerAdapter.addList(datalist);
+
+
+        String[] columns = new String[]{"_id", "name", "phone"};
+        Cursor c = getActivity().getContentResolver().query(Uri.parse(MainActivity.PROVIDER_URI),columns, null,null,null,null);
+        if(c != null){
+            while(c.moveToNext()){
+                String name = c.getString(1);
+                String phone = c.getString(2);
+                Data data = new Data(name,phone);
+                recyclerAdapter.additem(data);
+            }
+        }
 
         return fragmentphonebook;
     }

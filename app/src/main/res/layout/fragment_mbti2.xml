@@ -45,7 +45,7 @@
         android:id="@+id/priorbutton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prior"
+        android:text="Before"
         android:textStyle="bold"
         android:backgroundTint="#999990"
         app:layout_constraintLeft_toLeftOf="parent"
