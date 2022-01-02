@@ -4,69 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D6FAFA">
+    android:background="#DEF5FF">
 
     <ImageView
         android:id="@+id/mbtilogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mbti_logo" />
+        app:srcCompat="@drawable/mbti_logo"/>
 
     <TextView
-        android:id="@+id/Title"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/mbti_font"
-        android:text="MBTI 성향테스트"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        app:layout_constraintTop_toBottomOf="@+id/Title"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="120dp"
         android:id="@+id/Q10"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginBottom="300dp"
         android:text="내가 더 중요하게 \n 생각 하는 것은?"
         android:textAlignment="center"
+        android:gravity="center"
         android:textStyle="bold"
         android:fontFamily="@font/mbti_question"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/Q10A1"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="0dp"
         android:fontFamily="@font/mbti_question"
-        android:text="미래!\n 미래를 생각하지 않으면 \n 발전이 없다."
+        android:text="미래!\n 미래를 생각하지 않으면 발전이 없다."
         android:textAlignment="center"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Q10A2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/Q10A2"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Q10"
+        android:textSize="20dp"
         android:clickable="true"
-        android:background="@drawable/border"
-        android:elevation="20dp"/>
+        android:background="@drawable/select_text"
+        android:elevation="20dp"
+        android:textColor="@drawable/text_click"
+        />
 
     <TextView
         android:id="@+id/Q10A2"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mbti_question"
@@ -74,12 +65,15 @@
         android:textAlignment="center"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/Q10A1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Q10"
+        app:layout_constraintTop_toBottomOf="@+id/Q10A1"
+        android:textSize="20dp"
         android:clickable="true"
-        android:background="@drawable/border"
-        android:elevation="20dp"/>
+        android:background="@drawable/select_text"
+        android:elevation="20dp"
+        android:textColor="@drawable/text_click"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
