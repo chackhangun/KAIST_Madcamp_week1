@@ -9,12 +9,16 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1">
         <activity
@@ -24,12 +28,29 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".AddContactActivity"></activity>
 
+            <intent-filter>
+                <action android:name = "android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name = "android.intent.category.BROWSABLE"></category>
+                <data android:scheme="@string/kakao_scheme"
+                    android:host = "@string/kakaolink_host"></data>
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:authorities="com.camp.project1.ContactProvider"
+            android:name=".ContactProvider"
+            android:exported="true"/>
+
+        <meta-data
+            android:name= "com.kakao.sdk.AppKey"
+            android:value = "@string/kakao_app_key"></meta-data>
+
+        <activity android:name=".AddContactActivity"></activity>
+        <activity android:name=".ModifyContactActivity"></activity>
     </application>
 
 </manifest>

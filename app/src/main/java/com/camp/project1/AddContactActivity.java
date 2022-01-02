@@ -2,12 +2,9 @@ package com.camp.project1;
 
 import android.content.ContentUris;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.FileUtils;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
@@ -15,25 +12,11 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONException;
-import org.json.simple.JSONObject;
-
-import java.io.BufferedWriter;
-import java.io.File;
-
-
-import java.io.FileWriter;
-import java.io.IOException;
-
-
-
 public class AddContactActivity extends AppCompatActivity implements View.OnClickListener{
     public EditText name;
     public EditText number;
     public Button btn_save;
     public Button btn_cancel;
-    public Contact contactItem;
-    public String filename;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +38,7 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
             case R.id.save:
                 String itemname = name.getText().toString();
                 String itemnumber = number.getText().toString();
-
+                /*
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(ContactsContract.RawContacts.CONTACT_ID, 0);
                 contentValues.put(ContactsContract.RawContacts.AGGREGATION_MODE, ContactsContract.RawContacts.AGGREGATION_MODE_DISABLED);
@@ -69,7 +52,20 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
                 contentValues.put(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,itemname);
                 contentValues.put(ContactsContract.CommonDataKinds.Phone.NUMBER, itemnumber);
                 Uri dataUri = getContentResolver().insert(ContactsContract.Data.CONTENT_URI, contentValues);
+                startActivity(new Intent(this, MainActivity.class));
+                 */
+                /*
+                Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
+                intent.setType(ContactsContract.RawContacts.CONTENT_TYPE) ;
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, itemname);
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE, itemnumber);
+                startActivity(new Intent(this, MainActivity.class));
+                */
+                ContentValues newContact = new ContentValues();
+                newContact.put("name", itemname);
+                newContact.put("phone", itemnumber);
 
+                getContentResolver().insert(Uri.parse(MainActivity.PROVIDER_URI), newContact);
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.cancel:

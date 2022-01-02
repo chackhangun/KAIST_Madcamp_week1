@@ -17,7 +17,7 @@
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_weight = "1"
-                android:src = "@mipmap/ic_launcher">
+                android:src = "@drawable/man100">
             </ImageView>
 
             <LinearLayout
@@ -86,6 +86,29 @@
             app:srcCompat="@drawable/more100"
             android:scaleType="centerInside"
             android:animateLayoutChanges="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/moreoption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MODIFY" />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FF0000"
+            android:text="DELETE"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 
 </LinearLayout>
