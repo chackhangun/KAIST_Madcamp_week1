@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int PERMISSION_NUM = 100;
     private static boolean permission_check = false;
     public static final String PROVIDER_URI = "content://com.camp.project1.ContactProvider";
+    private PermissionSupport permission;
 
     public String name;
     public String number;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomView = findViewById(R.id.my_navigation);
         bottomView.setOnNavigationItemSelectedListener(listener);
 
+        permissionCheck();
 
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
@@ -79,17 +81,29 @@ public class MainActivity extends AppCompatActivity {
         mbtiQ12 = new MbtiQ12();
         mbtiResult = new MbtiResult();
         mymbti = new MBTI();
-
+/*
         if(permission_check == false){
             getpermission();
             permission_check = true;
-        }
+        }*/
         /*
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-
         }*/
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
+    }
+
+    private void permissionCheck(){
+        permission = new PermissionSupport(this, this);
+        if(!permission.checkPermission()){
+            permission.requestPermission();
+        }
+    }
+    public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+        if(!permission.permissionResult(requestCode, permissions, grantResults)){
+            Toast.makeText(this, "기능 사용을 위한 권한 동의가 필요합니다.", Toast.LENGTH_SHORT).show();
+            permission.requestPermission();
+        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener listener = new BottomNavigationView.OnNavigationItemSelectedListener() {

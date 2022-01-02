@@ -28,6 +28,7 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
     Button sharing;
     ImageView resultimage;
     String mbti;
+    String imageurl = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,7 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
         resultimage = rootview.findViewById(R.id.resultView);
         sharing = rootview.findViewById(R.id.kakao_shared);
         sharing.setOnClickListener(this);
-
+        imageurl = null;
         mbti = mainActivity.mymbti.getMBTItype();
         System.out.println("The result is = "+mbti);
         setimage(mbti);
@@ -56,22 +57,14 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
     }
 
     public void kakaolink() {
-        FeedTemplate params = FeedTemplate.newBuilder(ContentObject.newBuilder("MBTI 테스",
-                        "https://i.imgur.com/LKAfF6P.png",
+        //
+        FeedTemplate params = FeedTemplate.newBuilder(ContentObject.newBuilder("MBTI 테스트",
+                        imageurl,
                         LinkObject.newBuilder().setWebUrl("https://developers.kakao.com")
                                 .setMobileWebUrl("https://developers.kakao.com").build())
                         .setDescrption("나의 MBTI는??")
-                        .build())
-                .setSocial(SocialObject.newBuilder().setLikeCount(10).setCommentCount(20)
-                        .setSharedCount(30).setViewCount(40).build())
-                .addButton(new ButtonObject("와우 ", LinkObject.newBuilder().setWebUrl("https://i.imgur.com/LKAfF6P.png").setMobileWebUrl("https://i.imgur.com/LKAfF6P.png").build()))
-                .addButton(new ButtonObject("강준서 멍청", LinkObject.newBuilder()
-                        .setWebUrl("https://i.imgur.com/LKAfF6P.png")
-                        .setMobileWebUrl("https://i.imgur.com/LKAfF6P.png")
-                        .setAndroidExecutionParams("key1=value1")
-                        .setIosExecutionParams("key1=value1")
-                        .build()))
-                .build();
+                        .build()).setSocial(SocialObject.newBuilder().setLikeCount(10).setCommentCount(20)
+                        .setSharedCount(30).setViewCount(40).build()).build();
 
         Map<String, String> serverCallbackArgs = new HashMap<String, String>();
         serverCallbackArgs.put("user_id", "${current_user_id}");
@@ -94,51 +87,67 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
         switch (mbti){
             case "ENFJ":
                 resultimage.setImageResource(R.drawable.enfj);
+                imageurl = "https://i.imgur.com/amTi5fM.png";
                 break;
             case "ENFP":
                 resultimage.setImageResource(R.drawable.enfp);
+                imageurl = "https://i.imgur.com/qY4mtu8.png";
                 break;
             case "ENTJ":
                 resultimage.setImageResource(R.drawable.entj);
+                imageurl = "https://i.imgur.com/IHp8P2x.png";
                 break;
             case "ENTP":
                 resultimage.setImageResource(R.drawable.entp);
+                imageurl = "https://i.imgur.com/LKAfF6P.png";
                 break;
             case "ESFJ":
                 resultimage.setImageResource(R.drawable.esfj);
+                imageurl = "https://i.imgur.com/71HrLaD.png";
                 break;
             case "ESFP":
                 resultimage.setImageResource(R.drawable.esfp);
+                imageurl = "https://i.imgur.com/OOX7iVP.png";
                 break;
             case "ESTJ":
                 resultimage.setImageResource(R.drawable.estj);
+                imageurl = "https://i.imgur.com/Voe6jm4.png";
                 break;
             case "ESTP":
                 resultimage.setImageResource(R.drawable.estp);
+                imageurl = "https://i.imgur.com/Clr3qJ4.png";
                 break;
             case "INFJ":
                 resultimage.setImageResource(R.drawable.infj);
+                imageurl = "https://i.imgur.com/dtYJlem.png";
                 break;
             case "INFP":
                 resultimage.setImageResource(R.drawable.infp);
+                imageurl = "https://i.imgur.com/WN2b6z4.png";
                 break;
             case "INTJ":
                 resultimage.setImageResource(R.drawable.intj);
+                imageurl = "https://i.imgur.com/0cmvSb5.png";
                 break;
             case "INTP":
                 resultimage.setImageResource(R.drawable.intp);
+                imageurl = "https://i.imgur.com/6nP7ff8.png";
                 break;
             case "ISFJ":
                 resultimage.setImageResource(R.drawable.isfj);
+                imageurl = "https://i.imgur.com/e0PtPQz.png";
                 break;
             case "ISFP":
                 resultimage.setImageResource(R.drawable.isfp);
+                imageurl = "https://i.imgur.com/M6LVPpf.png";
                 break;
             case "ISTJ":
                 resultimage.setImageResource(R.drawable.istj);
+                imageurl = "https://i.imgur.com/xH9C5sY.png";
                 break;
             case "ISTP":
                 resultimage.setImageResource(R.drawable.istp);
+                imageurl = "https://i.imgur.com/H28Chza.png";
                 break;
         }
     }

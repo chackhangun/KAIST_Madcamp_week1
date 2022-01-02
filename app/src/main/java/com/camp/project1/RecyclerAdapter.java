@@ -37,11 +37,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private int preposition2 = -1;
     private Context context;
     Activity activity;
-    public boolean check = false;
 
     @NotNull
         @Override
         public RecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemview, parent, false); // 만든 xml을 inflate시키는 동작.
             //새로운 view를 만들어서 view holder에 넣어주기 위함이다. why? view(view)는 xml로 이루어져있고 viewholder가 관리한다. adapter가 필요할 때마다 사용한다.
             context = parent.getContext(); //////// check
@@ -87,10 +87,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
             String mname;
             String mnumber;
+            public boolean check = false;
+
 
             Data data;
             private int position;
-            private int position2;
             private int PERMISSION_CALL = 100;
             private int PERMISSION_SMS = 101;
 
@@ -124,6 +125,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 number.setText(data.getNumber());
                 m_number = data.getNumber();
                 changeVisibility(selectedItems.get(position));
+                option.setVisibility(option.GONE);
                 //changeVisibility2(selectedItems2.get(position));
                 linearlayout.setOnClickListener(this);
             }
@@ -165,7 +167,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("smsto:"+m_number)));
                         break;
                     case R.id.morebutton:
-
+                        if (check == false){
+                            option.setVisibility(option.VISIBLE);
+                            check = true;
+                        }
+                        else{
+                            option.setVisibility(option.GONE);
+                        }
                         break;
 
                     case R.id.modify:
@@ -199,22 +207,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 va.start();
             }
 
-            void changeVisibility2(final boolean isExpanded) {
-                int dpValue = 50;
-                float d = context.getResources().getDisplayMetrics().density;
-                int height = (int) (dpValue * d);
-
-                ValueAnimator va = isExpanded ? ValueAnimator.ofInt(0, height) : ValueAnimator.ofInt(height, 0); //고치
-                va.setDuration(500);
-                va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        option.getLayoutParams().height = (int) valueAnimator.getAnimatedValue();
-                        option.requestLayout();
-                        option.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
-                    }
-                });
-                va.start();
-            }
         }
     }
