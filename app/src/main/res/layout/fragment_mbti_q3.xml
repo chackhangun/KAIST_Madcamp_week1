@@ -42,7 +42,7 @@
         android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/mbti_question"
-        android:text="처음이라 많이 낯설지? \n 반갑다! 라며 \n 먼저 다가오는 친구"
+        android:text="처음이라 많이 낯설지? 반갑다! 라며 \n 먼저 다가오는 친구"
         android:textAlignment="center"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/Q3A2"

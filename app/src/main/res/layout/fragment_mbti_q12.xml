@@ -43,7 +43,7 @@
         android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/mbti_question"
-        android:text="그때그때 \n 생각나는대로 일 처리!\n 융통성있게 일을 진행하는 것을 좋아한다."
+        android:text="그때그때\n 생각나는대로 일 처리!\n 융통성있게 일을 진행하는 것을 좋아한다."
         android:textAlignment="center"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/Q12A2"

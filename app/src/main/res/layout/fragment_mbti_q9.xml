@@ -41,7 +41,7 @@
         android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/mbti_question"
-        android:text="목적지가 우선이다. \n 생기든 말든 신경쓰지 않고 \n 지나간다."
+        android:text="목적지가 우선이다. \n 생기든 말든 신경쓰지 않고 지나간다."
         android:textAlignment="center"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/Q9A2"

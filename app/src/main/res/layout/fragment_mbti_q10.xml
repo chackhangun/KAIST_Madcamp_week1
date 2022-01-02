@@ -39,7 +39,7 @@
         android:id="@+id/Q10A1"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/mbti_question"
         android:text="미래!\n 미래를 생각하지 않으면 발전이 없다."
         android:textAlignment="center"
