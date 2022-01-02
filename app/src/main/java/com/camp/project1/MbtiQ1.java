@@ -6,45 +6,51 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 
-public class MbtiFragment3 extends Fragment implements View.OnClickListener{
-    public Button btn_next;
-    public Button btn_prior;
+public class MbtiQ1 extends Fragment implements View.OnClickListener{
+    public TextView answer1;
+    public TextView answer2;
     MainActivity activity;
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
         super.onAttach(context);
         activity = (MainActivity)getActivity();
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) { //초기화 리소스들
         super.onCreate(savedInstanceState);
+
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti3, container, false);
-        btn_prior = rootView.findViewById(R.id.priorbutton3);
-        btn_prior.setOnClickListener(this);
-        btn_next = rootView.findViewById(R.id.nextbutton3);
-        btn_next.setOnClickListener(this);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti_q1, container, false);
+        answer1 = rootView.findViewById(R.id.Q1A1);
+        answer2 = rootView.findViewById(R.id.Q1A2);
+
+        answer1.setOnClickListener(this);
+        answer2.setOnClickListener(this);
         return rootView;
+
     }
     @Override
     public void onClick(View view){
-        switch(view.getId()){
-            case R.id.nextbutton3:
-                activity.replaceFragment(activity.mbtiResult);
+        switch (view.getId()){
+            case R.id.Q1A1:
+                activity.mymbti.incrementEI("E");
                 break;
-            case R.id.priorbutton3:
-                activity.replaceFragment(activity.mbtiFragment2);
+            case R.id.Q1A2:
+                activity.mymbti.incrementEI("I");
                 break;
-
         }
-
-
+        //activity.getSupportFragmentManager().beginTransaction().replace(R.id.mbtifragment_container1, activity.mbtiQ2).commit();
+        activity.replaceFragment(activity.mbtiQ2);
     }
 }

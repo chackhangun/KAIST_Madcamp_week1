@@ -35,15 +35,26 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
     private com.camp.project1.PhonebookFragment phonebookFragment;
     private com.camp.project1.GalleryFragment galleryFragment;
-    public com.camp.project1.MbtiFragment mbtiFragment;
-    public com.camp.project1.MbtiFragment2 mbtiFragment2;
-    public com.camp.project1.MbtiFragment3 mbtiFragment3;
+    public com.camp.project1.MbtiQ1 mbtiQ1;
+    public com.camp.project1.MbtiQ2 mbtiQ2;
+    public com.camp.project1.MbtiQ3 mbtiQ3;
+    public com.camp.project1.MbtiQ4 mbtiQ4;
+    public com.camp.project1.MbtiQ5 mbtiQ5;
+    public com.camp.project1.MbtiQ6 mbtiQ6;
+    public com.camp.project1.MbtiQ7 mbtiQ7;
+    public com.camp.project1.MbtiQ8 mbtiQ8;
+    public com.camp.project1.MbtiQ9 mbtiQ9;
+    public com.camp.project1.MbtiQ10 mbtiQ10;
+    public com.camp.project1.MbtiQ11 mbtiQ11;
+    public com.camp.project1.MbtiQ12 mbtiQ12;
     public com.camp.project1.MbtiResult mbtiResult;
-
+    public MBTI mymbti;
     private static final int PERMISSION_NUM = 100;
+    private static boolean permission_check = false;
+    public static final String PROVIDER_URI = "content://com.camp.project1.ContactProvider";
+
     public String name;
     public String number;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,22 +62,32 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomView = findViewById(R.id.my_navigation);
         bottomView.setOnNavigationItemSelectedListener(listener);
 
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
-
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_NUM);
-        }
-
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS}, PERMISSION_NUM);
-        }
 
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
-        mbtiFragment = new MbtiFragment();
-        mbtiFragment2 = new MbtiFragment2();
-        mbtiFragment3 = new MbtiFragment3();
+        mbtiQ1 = new MbtiQ1();
+        mbtiQ2 = new MbtiQ2();
+        mbtiQ3 = new MbtiQ3();
+        mbtiQ4 = new MbtiQ4();
+        mbtiQ5 = new MbtiQ5();
+        mbtiQ6 = new MbtiQ6();
+        mbtiQ7 = new MbtiQ7();
+        mbtiQ8 = new MbtiQ8();
+        mbtiQ9 = new MbtiQ9();
+        mbtiQ10 = new MbtiQ10();
+        mbtiQ11 = new MbtiQ11();
+        mbtiQ12 = new MbtiQ12();
         mbtiResult = new MbtiResult();
+        mymbti = new MBTI();
+
+        if(permission_check == false){
+            getpermission();
+            permission_check = true;
+        }
+        /*
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
+
+        }*/
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
     }
@@ -82,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, galleryFragment).commit();
                     break;
                 case R.id.item_calendar:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
                     break;
             }
             return true;
@@ -95,4 +116,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment).commit();      // Fragment로 사용할 MainActivity내의 layout공간을 선택합니다.
     }
 
+    public void getpermission(){
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MODE_PRIVATE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_NUM);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS}, PERMISSION_NUM);
+    }
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D6FAFA">
+
+    <ImageView
+        android:id="@+id/mbtilogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mbti_logo" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/mbti_font"
+        android:text="MBTI 성향테스트"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/Title"
+        android:id="@+id/Q5"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="300dp"
+        android:text="점심시간, 친구들과 밥을 먹고있다.\n 나의 행동은?"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/mbti_question"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/Q5A1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/mbti_question"
+        android:text="친구들에게 오늘 나온 고기반찬이 맛있다며 신나게 밥을 먹는다."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/Q5A2"
+        app:layout_constraintTop_toBottomOf="@+id/Q5"
+        android:clickable="true"
+        android:background="@drawable/border"
+        android:elevation="20dp"/>
+
+    <TextView
+        android:id="@+id/Q5A2"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/mbti_question"
+        android:text="친구들의 이야기를 들으며 조용히 밥을 먹는다."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/Q5A1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Q5"
+        android:clickable="true"
+        android:background="@drawable/border"
+        android:elevation="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.camp.project1"
-        minSdkVersion 24
+        minSdkVersion 30
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0-beta01'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.google.code.gson:gson:2.8.9'
+    implementation "com.kakao.sdk:v2-link:2.8.4" // 메시지(카카오링크)
 
     implementation group: 'com.kakao.sdk', name: 'kakaolink', version:project.KAKAO_SDK_VERSION
 

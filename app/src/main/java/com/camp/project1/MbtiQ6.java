@@ -6,16 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextClock;
+import android.widget.TextView;
+
 import androidx.fragment.app.Fragment;
 
-public class MbtiFragment2 extends Fragment implements View.OnClickListener{
-    public Button btn_next;
-    public Button btn_prior;
+import org.w3c.dom.Text;
+
+public class MbtiQ6 extends Fragment implements View.OnClickListener{
+    public TextView answer1;
+    public TextView answer2;
     MainActivity activity;
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
         super.onAttach(context);
         activity = (MainActivity)getActivity();
+
     }
 
     @Override
@@ -23,28 +29,29 @@ public class MbtiFragment2 extends Fragment implements View.OnClickListener{
         super.onCreate(savedInstanceState);
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti2, container, false);
-        btn_prior = rootView.findViewById(R.id.priorbutton2);
-        btn_prior.setOnClickListener(this);
-        btn_next = rootView.findViewById(R.id.nextbutton2);
-        btn_next.setOnClickListener(this);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti_q6, container, false);
+        answer1 = rootView.findViewById(R.id.Q6A1);
+        answer2 = rootView.findViewById(R.id.Q6A2);
+
+        answer1.setOnClickListener(this);
+        answer2.setOnClickListener(this);
         return rootView;
+
     }
     @Override
     public void onClick(View view){
-        switch(view.getId()){
-            case R.id.nextbutton2:
-                activity.replaceFragment(activity.mbtiFragment3);
+        switch (view.getId()){
+            case R.id.Q6A1:
+                activity.mymbti.incrementTF("T");
                 break;
-            case R.id.priorbutton2:
-                activity.replaceFragment(activity.mbtiFragment);
+            case R.id.Q6A2:
+                activity.mymbti.incrementTF("F");
                 break;
-
         }
-
-
+        activity.replaceFragment(activity.mbtiQ7);
     }
 }

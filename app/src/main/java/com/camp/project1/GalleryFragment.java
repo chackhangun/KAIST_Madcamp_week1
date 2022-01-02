@@ -22,6 +22,4 @@ public class GalleryFragment extends Fragment {
         View fragmentgallery = inflater.inflate(R.layout.fragment_gallery, container, false);
         return fragmentgallery;
     }
-
-
 }

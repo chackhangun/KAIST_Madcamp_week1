@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 
     <application
@@ -26,7 +28,6 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -37,11 +38,19 @@
                 <data android:scheme="@string/kakao_scheme"
                     android:host = "@string/kakaolink_host"></data>
             </intent-filter>
-        </activity>s
+        </activity>
+
+        <provider
+            android:authorities="com.camp.project1.ContactProvider"
+            android:name=".ContactProvider"
+            android:exported="true"/>
 
         <meta-data
             android:name= "com.kakao.sdk.AppKey"
             android:value = "@string/kakao_app_key"></meta-data>
+
+        <activity android:name=".AddContactActivity"></activity>
+        <activity android:name=".ModifyContactActivity"></activity>
     </application>
 
 </manifest>

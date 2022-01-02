@@ -38,7 +38,7 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
             case R.id.save:
                 String itemname = name.getText().toString();
                 String itemnumber = number.getText().toString();
-
+                /*
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(ContactsContract.RawContacts.CONTACT_ID, 0);
                 contentValues.put(ContactsContract.RawContacts.AGGREGATION_MODE, ContactsContract.RawContacts.AGGREGATION_MODE_DISABLED);
@@ -52,14 +52,25 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
                 contentValues.put(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,itemname);
                 contentValues.put(ContactsContract.CommonDataKinds.Phone.NUMBER, itemnumber);
                 Uri dataUri = getContentResolver().insert(ContactsContract.Data.CONTENT_URI, contentValues);
+                startActivity(new Intent(this, MainActivity.class));
+                 */
+                /*
+                Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
+                intent.setType(ContactsContract.RawContacts.CONTENT_TYPE) ;
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, itemname);
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE, itemnumber);
+                startActivity(new Intent(this, MainActivity.class));
+                */
+                ContentValues newContact = new ContentValues();
+                newContact.put("name", itemname);
+                newContact.put("phone", itemnumber);
 
+                getContentResolver().insert(Uri.parse(MainActivity.PROVIDER_URI), newContact);
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.cancel:
                 startActivity(new Intent(this, MainActivity.class));
                 break;
-
-            case R.id.delete:
         }
     }
 
