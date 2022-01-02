@@ -2,6 +2,7 @@ package com.camp.project1;
 
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -30,12 +31,15 @@ import androidx.core.content.ContextCompat;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private PhonebookFragment phonebookFragment;
     private GalleryFragment galleryFragment;
     private CalendarFragment calendarFragment;
     private static final int PERMISSION_NUM = 100;
+
+    private PermissionSupport permission;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
         bottomView.setOnNavigationItemSelectedListener(listener);
 
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_NUM);
+        permissionCheck();
+
+/*      Permissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_NUM);
         }
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_CONTACTS}, PERMISSION_NUM);
@@ -65,13 +70,23 @@ public class MainActivity extends AppCompatActivity {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, PERMISSION_NUM);
         }
-
-
+*/
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
         calendarFragment = new CalendarFragment();
     }
 
+    private void permissionCheck(){
+       permission = new PermissionSupport(this, this);
+       if(!permission.checkPermission()){
+           permission.requestPermission();
+       }
+    }
+    public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+        if(!permission.permissionResult(requestCode, permissions, grantResults)){
+            permission.requestPermission();
+        }
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener listener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
