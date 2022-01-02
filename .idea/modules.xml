@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidStudioProjects.project1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidStudioProjects.project1.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/immersion_camp.project1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/immersion_camp.project1.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project1.iml" filepath="$PROJECT_DIR$/.idea/modules/project1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/project1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/project1.app.iml" />
     </modules>

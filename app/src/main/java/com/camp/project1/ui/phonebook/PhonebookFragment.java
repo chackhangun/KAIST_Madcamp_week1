@@ -70,6 +70,7 @@ public class PhonebookFragment extends Fragment{
         return fragmentphonebook;
     }
 
+
     public ArrayList<Data> getContacts(Context context){
         ArrayList<Data> dataList = new ArrayList<>();
         ContentResolver resolver = context.getContentResolver();

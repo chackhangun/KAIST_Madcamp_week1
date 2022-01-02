@@ -52,9 +52,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             return temp_data.size();
         }
 
-        public void additem(Data data) {
+        /*public void additem(Data data) {
             temp_data.add(data);
-        }
+        }*/
 
         public void addList(ArrayList<Data> dataList) {
             temp_data = null;
