@@ -3,5 +3,5 @@
     <font
         android:fontStyle = "normal"
         android:fontWeight = "400"
-        android:font = "@font/font2"/>
+        android:font = "@font/custom"/>
 </font-family>

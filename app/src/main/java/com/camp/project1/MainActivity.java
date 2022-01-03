@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -59,11 +60,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //permissionCheck();
+        getpermission();
+        ActionBar ab = getSupportActionBar();
+        ab.hide();
+
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomView = findViewById(R.id.my_navigation);
         bottomView.setOnNavigationItemSelectedListener(listener);
-
-        permissionCheck();
 
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
@@ -81,23 +86,22 @@ public class MainActivity extends AppCompatActivity {
         mbtiQ12 = new MbtiQ12();
         mbtiResult = new MbtiResult();
         mymbti = new MBTI();
-/*
-        if(permission_check == false){
-            getpermission();
-            permission_check = true;
-        }*/
-        /*
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-        }*/
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
     }
 
     private void permissionCheck(){
         permission = new PermissionSupport(this, this);
+        permission.requestPermission();
         if(!permission.checkPermission()){
             permission.requestPermission();
         }
+
+    }
+
+    public void after_permission_check(){
+
     }
     public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         if(!permission.permissionResult(requestCode, permissions, grantResults)){

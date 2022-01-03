@@ -62,11 +62,11 @@ public class PhonebookFragment extends Fragment{
         recyclerAdapter = new RecyclerAdapter();
         recyclerAdapter.setActivity(act);
 
+
         recyclerView.setAdapter(recyclerAdapter);
 
         datalist = getContacts(ct);//ArrayList<Data>를 반환
         recyclerAdapter.addList(datalist);
-
 
         String[] columns = new String[]{"_id", "name", "phone"};
         Cursor c = getActivity().getContentResolver().query(Uri.parse(MainActivity.PROVIDER_URI),columns, null,null,null,null);
@@ -78,6 +78,7 @@ public class PhonebookFragment extends Fragment{
                 recyclerAdapter.additem(data);
             }
         }
+
 
         return fragmentphonebook;
     }

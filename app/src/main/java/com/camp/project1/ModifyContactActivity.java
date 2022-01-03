@@ -29,28 +29,23 @@ public class ModifyContactActivity extends AppCompatActivity implements View.OnC
         name2 = findViewById(R.id.add_name2);
         number2 = findViewById(R.id.add_number2);
 
-        original_name = name2.getText().toString();
-        original_phone = number2.getText().toString();
-
         btn_save2 = findViewById(R.id.save2);
         btn_cancel2 = findViewById(R.id.cancel2);
         btn_save2.setOnClickListener(this);
         btn_cancel2.setOnClickListener(this);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String number = intent.getStringExtra("number");
-        System.out.println(name);
-        name2.setText(name);
-        number2.setText(number);
+        original_name = intent.getStringExtra("name");
+        original_phone = intent.getStringExtra("number");
+        System.out.println(original_name);
+        name2.setText(original_name);
+        number2.setText(original_phone);
     }
 
     @Override
     public void onClick(View view){
         switch(view.getId()){
             case R.id.save2:
-                String itemname = name2.getText().toString();
-                String itemnumber = number2.getText().toString();
                 /*
                 ContentValues contentValues = new ContentValues();
                 contentValues.put(ContactsContract.RawContacts.CONTACT_ID, 0);
@@ -71,15 +66,19 @@ public class ModifyContactActivity extends AppCompatActivity implements View.OnC
                 Cursor c = getContentResolver().query(Uri.parse(MainActivity.PROVIDER_URI),columns, null,null,null,null);
                 if(c != null){
                     while(c.moveToNext()){
+                        String id = String.valueOf(c.getInt(0));
                         String name = c.getString(1);
                         String phone = c.getString(2);
-
-                        if(name == original_name){
+                        System.out.println("this name : "+name);
+                        System.out.println("original name : "+original_name);
+                        if(name.equals(original_name)){
+                            System.out.println("if enter");
                             ContentValues updatePhone = new ContentValues();
-                            updatePhone.put("name", name);
+                            updatePhone.put("phone", phone);
 
-                            int updateRecord = getContentResolver().update(Uri.parse(MainActivity.PROVIDER_URI), updatePhone, "phone="+itemnumber,null);
+                            getContentResolver().update(Uri.parse(MainActivity.PROVIDER_URI), updatePhone,"_id = " + id, null);
                             System.out.println("nunmber update complete\n");
+                            break;
                         }
                     }
                 }
