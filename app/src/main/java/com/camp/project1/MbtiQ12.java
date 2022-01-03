@@ -16,6 +16,8 @@ import org.w3c.dom.Text;
 public class MbtiQ12 extends Fragment implements View.OnClickListener{
     public TextView answer1;
     public TextView answer2;
+    public Button backbutton;
+
     MainActivity activity;
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
@@ -39,9 +41,12 @@ public class MbtiQ12 extends Fragment implements View.OnClickListener{
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti_q12, container, false);
         answer1 = rootView.findViewById(R.id.Q12A1);
         answer2 = rootView.findViewById(R.id.Q12A2);
-
+        backbutton = rootView.findViewById(R.id.button12);
+        backbutton.setOnClickListener(this);
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);
+
+        activity.mymbti.print();
         return rootView;
 
     }
@@ -49,12 +54,16 @@ public class MbtiQ12 extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q12A1:
-                activity.mymbti.incrementPJ("P");
+                activity.mymbti.incrementPJ("P", "Do");
                 break;
             case R.id.Q12A2:
-                activity.mymbti.incrementPJ("J");
+                activity.mymbti.incrementPJ("J", "Do");
                 break;
+            case R.id.button12:
+                activity.replaceFragment(activity.mbtiQ11);
+                return;
         }
+
         activity.replaceFragment(activity.mbtiResult);
     }
 }

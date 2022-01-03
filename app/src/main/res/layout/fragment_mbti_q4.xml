@@ -53,7 +53,9 @@
         android:layout_height="100dp"
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mbti_question"
-        android:text="캐리어를 풀어 옷과 책을 차곡차곡 정리한다."
+        android:text="캐리어를 풀어 \n 옷과 책을 차곡차곡 정리한다."
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/Q4A2"
@@ -69,6 +71,8 @@
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mbti_question"
         android:text="필요한 것만 대충 꺼내 쓴다."
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Q4A1"
         app:layout_constraintRight_toRightOf="parent"
@@ -77,5 +81,12 @@
         android:background="@drawable/border"
         android:elevation="20dp"/>
 
-
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전 질문으로 돌아가기"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

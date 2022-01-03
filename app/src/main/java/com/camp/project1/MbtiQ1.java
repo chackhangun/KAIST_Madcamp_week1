@@ -13,7 +13,10 @@ import androidx.fragment.app.Fragment;
 public class MbtiQ1 extends Fragment implements View.OnClickListener{
     public TextView answer1;
     public TextView answer2;
+    public Boolean check;
+    public String pastselection;
     MainActivity activity;
+
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
         super.onAttach(context);
@@ -24,7 +27,7 @@ public class MbtiQ1 extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) { //초기화 리소스들
         super.onCreate(savedInstanceState);
-
+        check = false;
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
 
@@ -37,20 +40,28 @@ public class MbtiQ1 extends Fragment implements View.OnClickListener{
 
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);
-        return rootView;
 
+        if(check == true){
+            activity.mymbti.incrementEI(pastselection,"Undo");
+            System.out.println("Undo\n");
+        }
+        activity.mymbti.print();
+        return rootView;
     }
     @Override
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q1A1:
-                activity.mymbti.incrementEI("E");
+                activity.mymbti.incrementEI("E", "Do");
+                pastselection = "E";
                 break;
             case R.id.Q1A2:
-                activity.mymbti.incrementEI("I");
+                activity.mymbti.incrementEI("I", "Do");
+                pastselection = "I";
                 break;
         }
         //activity.getSupportFragmentManager().beginTransaction().replace(R.id.mbtifragment_container1, activity.mbtiQ2).commit();
+        check = true;
         activity.replaceFragment(activity.mbtiQ2);
     }
 }

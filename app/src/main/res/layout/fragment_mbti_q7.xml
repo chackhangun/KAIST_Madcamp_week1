@@ -38,7 +38,7 @@
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_marginBottom="300dp"
-        android:text="다음 중 내가 더 자주 사용하는 말은?"
+        android:text="다음 중 내가 \n 더 자주 사용하는 말은?"
         android:textAlignment="center"
         android:textStyle="bold"
         android:fontFamily="@font/mbti_question"
@@ -53,7 +53,9 @@
         android:layout_height="100dp"
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mbti_question"
-        android:text="아니...! 현실적으로 좀 생각하라고!"
+        android:text="아니...! \n 현실적으로 좀 생각하라고!"
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/Q7A2"
@@ -68,7 +70,9 @@
         android:layout_height="100dp"
         android:layout_marginBottom="40dp"
         android:fontFamily="@font/mbti_question"
-        android:text="아니...! 상상 좀 해봐!"
+        android:text="아니...! \n 상상 좀 해봐!"
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Q7A1"
         app:layout_constraintRight_toRightOf="parent"
@@ -77,5 +81,12 @@
         android:background="@drawable/border"
         android:elevation="20dp"/>
 
-
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전 질문으로 돌아가기"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,9 @@ import org.w3c.dom.Text;
 public class MbtiQ4 extends Fragment implements View.OnClickListener{
     public TextView answer1;
     public TextView answer2;
+    public Button backbutton;
+    public String pastselection;
+    public Boolean check;
     MainActivity activity;
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
@@ -27,6 +30,7 @@ public class MbtiQ4 extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) { //초기화 리소스들
         super.onCreate(savedInstanceState);
+        check = false;
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
 
@@ -36,9 +40,15 @@ public class MbtiQ4 extends Fragment implements View.OnClickListener{
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti_q4, container, false);
         answer1 = rootView.findViewById(R.id.Q4A1);
         answer2 = rootView.findViewById(R.id.Q4A2);
-
+        backbutton = rootView.findViewById(R.id.button4);
+        backbutton.setOnClickListener(this);
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);
+        if(check == true){
+            activity.mymbti.incrementEI(pastselection,"Undo");
+            System.out.println("Undo\n");
+        }
+        activity.mymbti.print();
         return rootView;
 
     }
@@ -46,12 +56,18 @@ public class MbtiQ4 extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q4A1:
-                activity.mymbti.incrementPJ("J");
+                activity.mymbti.incrementPJ("J", "Do");
+                pastselection = "J";
                 break;
             case R.id.Q4A2:
-                activity.mymbti.incrementPJ("P");
+                activity.mymbti.incrementPJ("P", "Do");
+                pastselection = "P";
                 break;
+            case R.id.button4:
+                activity.replaceFragment(activity.mbtiQ3);
+                return;
         }
+        check = true;
         activity.replaceFragment(activity.mbtiQ5);
     }
 }

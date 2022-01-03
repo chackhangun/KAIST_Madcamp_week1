@@ -15,35 +15,68 @@ public class MBTI {
         mbtitype = null;
     }
 
-    public void incrementEI(String type){
-        if (type == "E"){
-            this.EI[0]++;
+    public void incrementEI(String type, String check){
+        if(check == "Do"){
+            if (type == "E"){
+                this.EI[0]++;
+            }else{
+                this.EI[1]++;
+            }
         }else{
-            this.EI[1]++;
+            if (type == "E"){
+                this.EI[0]--;
+            }else{
+                this.EI[1]--;
+            }
+        }
+
+    }
+
+    public void incrementSN(String type, String check){
+        if(check == "Do") {
+            if (type == "S") {
+                this.SN[0]++;
+            } else {
+                this.SN[1]++;
+            }
+        }else{
+            if (type == "S") {
+                this.SN[0]--;
+            } else {
+                this.SN[1]--;
+            }
         }
     }
 
-    public void incrementSN(String type){
-        if (type == "S"){
-            this.SN[0]++;
+    public void incrementTF(String type, String check){
+        if(check == "Do") {
+            if (type == "T") {
+                this.TF[0]++;
+            } else {
+                this.TF[1]++;
+            }
         }else{
-            this.SN[1]++;
+            if (type == "T") {
+                this.TF[0]--;
+            } else {
+                this.TF[1]--;
+            }
         }
     }
 
-    public void incrementTF(String type){
-        if (type == "T"){
-            this.TF[0]++;
+    public void incrementPJ(String type, String check){
+        if(check == "Do") {
+            if (type == "P") {
+                this.PJ[0]++;
+            } else {
+                this.PJ[1]++;
+            }
         }else{
-            this.TF[1]++;
-        }
-    }
-
-    public void incrementPJ(String type){
-        if (type == "P"){
-            this.PJ[0]++;
-        }else{
-            this.PJ[1]++;
+            if (type == "P") {
+                this.PJ[0]--;
+            } else {
+                this.PJ[1]--;
+            }
         }
     }
 
@@ -77,5 +110,9 @@ public class MBTI {
         }
 
         return this.mbtitype;
+    }
+
+    public void print(){
+        System.out.println("E: " + EI[0] + " I: " + EI[1] + " S: "+ SN[0] + " N: " + SN[1] + " T: " + TF[0] + " F: " + TF[1] + " P: " + PJ[0] + " J: " + PJ[1]+"\n");
     }
 }
