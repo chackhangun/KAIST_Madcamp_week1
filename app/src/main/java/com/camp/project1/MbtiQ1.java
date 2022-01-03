@@ -9,12 +9,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
 public class MbtiQ1 extends Fragment implements View.OnClickListener{
     public TextView answer1;
     public TextView answer2;
     MainActivity activity;
+
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
         super.onAttach(context);

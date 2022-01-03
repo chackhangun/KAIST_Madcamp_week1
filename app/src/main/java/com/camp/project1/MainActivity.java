@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -59,9 +60,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ActionBar ab = getSupportActionBar();
+        ab.hide();
+
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomView = findViewById(R.id.my_navigation);
         bottomView.setOnNavigationItemSelectedListener(listener);
+
 
         permissionCheck();
 

@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project1">
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity android:name="com.camp.project1.ImageActivity"></activity>
         <activity
             android:name=".MainActivity"
