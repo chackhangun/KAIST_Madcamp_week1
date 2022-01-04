@@ -19,7 +19,11 @@ public class ImageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo_detail);
 
         imageView = (ImageView) findViewById(R.id.image);
+<<<<<<< HEAD
         // String imagePath = getIntent().getParcelableExtra(EXTRA_PHOTO);
+=======
+       // String imagePath = getIntent().getParcelableExtra(EXTRA_PHOTO);
+>>>>>>> parent of 9f42a28... add image zoom
         String imagePath = getIntent().getStringExtra(EXTRA_PHOTO);
 
         Glide.with(this)

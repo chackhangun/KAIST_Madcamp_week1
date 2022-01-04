@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]" date="1641272458060" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Revert &quot;fix mbti page&quot;]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/javaCompile/javaCompile.lock" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/javaCompile/javaCompile.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/javaCompile.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/javaCompile/classAnalysis.bin" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/javaCompile/classAnalysis.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/classAnalysis.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/javaCompile/jarAnalysis.bin" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/javaCompile/jarAnalysis.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/jarAnalysis.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/resourceHashesCache.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/6.7.1/javaCompile/taskHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/6.7.1/javaCompile/taskHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Revert__fix_mbti_page_]/taskHistory.bin" />
+  </binary>
+</changelist>

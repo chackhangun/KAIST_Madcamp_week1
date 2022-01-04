@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+=======
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/drawable/drawable_text.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/drawable/drawable_text_click.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/drawable/select_text.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/drawable/text_click.xml" value="0.1" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/font/mbti_font.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/font/mbti_question.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/activity_photo_detail.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q1.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q10.xml" value="0.33" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q11.xml" value="0.33" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q12.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q2.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q3.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q4.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q5.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q6.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q7.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q8.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_mbti_q9.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/fragment_phonebook.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/layout/mbti_result.xml" value="0.35" />
+        <entry key="..\:/Users/LGPC/Desktop/Flutter/madcampProject/immersion_camp_merge/immersion_camp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+>>>>>>> parent of 9f42a28... add image zoom
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
