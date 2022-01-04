@@ -55,6 +55,7 @@ public class MbtiQ2 extends Fragment implements View.OnClickListener{
             System.out.println("Undo\n");
             activity.mymbti.backward = false;
         }
+        activity.mymbti.mbti_page = 2;
         activity.mymbti.print();
         return rootView;
 

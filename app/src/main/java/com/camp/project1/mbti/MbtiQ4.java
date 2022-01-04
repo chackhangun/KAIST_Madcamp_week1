@@ -50,6 +50,7 @@ public class MbtiQ4 extends Fragment implements View.OnClickListener{
             System.out.println("Undo\n");
             activity.mymbti.backward = false;
         }
+        activity.mymbti.mbti_page = 4;
         activity.mymbti.print();
         return rootView;
 
@@ -68,6 +69,7 @@ public class MbtiQ4 extends Fragment implements View.OnClickListener{
             case R.id.button4:
                 activity.mymbti.backward = true;
                 activity.replaceFragment(activity.mbtiQ3);
+                System.out.println("here\n");
                 return;
         }
         activity.replaceFragment(activity.mbtiQ5);
