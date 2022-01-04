@@ -119,6 +119,7 @@
                             break;
         ```
         
+        
     - Delete
         
         Delete를 누르게 되면 ViewHolder의 TextView에 있는 name과 number를 string으로 가져온다. 그 후 해당 name의 id를 찾는다. cursor와 for loop을 사용하며 Textview의 name과 Contacts.db의 이름을 비교한다. 같은 값을 찾게 되면 db 테이블에서 삭제한다.
@@ -169,6 +170,8 @@
                             context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("smsto:"+m_number)));
                             break;
         ```
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
+
         
 
 # Second Tap: Gallery
