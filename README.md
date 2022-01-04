@@ -172,6 +172,8 @@
 
 # Second Tap: Gallery
 
+![갤러리](https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif)
+
 # Third Tap: MBTI Test
 
 - Component
