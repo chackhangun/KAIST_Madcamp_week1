@@ -55,6 +55,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
+        https://github.com/chackhangun/immersion_camp/issues/13#issue-1093230826
         
     - Recycler Adapter
         
