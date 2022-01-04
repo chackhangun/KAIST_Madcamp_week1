@@ -29,6 +29,7 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
     ImageView resultimage;
     String mbti;
     String imageurl = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,7 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
         System.out.println("The result is = "+mbti);
         setimage(mbti);
         mainActivity.mymbti.mbti_page = 13;
+
         return rootview;
     }
 
