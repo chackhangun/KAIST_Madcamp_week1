@@ -121,7 +121,7 @@
         ```
            
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif)
+    ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif)
 
     - Delete
         
