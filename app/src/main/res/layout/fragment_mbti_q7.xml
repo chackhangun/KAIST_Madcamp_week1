@@ -73,6 +73,22 @@
         android:background="@drawable/select_text"
         android:elevation="20dp"
         android:textColor="@drawable/text_click"/>
+<<<<<<< HEAD
+=======
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="이전 질문으로 돌아가기"
+        android:textStyle="bold"
+        android:fontFamily="@font/mbti_question"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Q7A2" />/>
+
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

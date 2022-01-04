@@ -8,7 +8,11 @@ android {
 
     defaultConfig {
         applicationId "com.camp.project1"
+<<<<<<< HEAD
         minSdkVersion 24
+=======
+        minSdkVersion 26
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"

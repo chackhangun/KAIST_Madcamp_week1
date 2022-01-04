@@ -1,8 +1,8 @@
 package com.camp.project1;
 
 public class Data {
-    private String name;
-    private String number;
+    public String name;
+    public String number;
 
     public Data(String m_name, String m_number){
         name = m_name;

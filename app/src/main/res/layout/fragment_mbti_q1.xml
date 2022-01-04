@@ -72,7 +72,11 @@
         android:clickable="true"
         android:background="@drawable/select_text"
         android:elevation="20dp"
+<<<<<<< HEAD
         android:textColor="@drawable/text_click"/>/>
 
 
+=======
+        android:textColor="@drawable/text_click"/>
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
 </androidx.constraintlayout.widget.ConstraintLayout>

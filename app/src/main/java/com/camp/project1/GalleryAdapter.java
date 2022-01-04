@@ -43,7 +43,10 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
 
         /*SpacePhoto spacePhoto = mSpacePhotos[position];
         ImageView imageView = holder.mPhotoImageView;
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
         Glide.with(imageView)
                 .load(spacePhoto.getUrl())
                 .placeholder(R.drawable.ic_launcher_background) //loading image

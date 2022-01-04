@@ -63,6 +63,7 @@ public class GalleryFragment extends Fragment {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
         try {
+<<<<<<< HEAD
                 while(!permissionSupport.checkEachPermission(permissions)){
                     Toast.makeText(getContext(), "기능 사용을 위한 권한 동의가 필요합니다.", Toast.LENGTH_SHORT).show();
                     permissionSupport.requestPermission();
@@ -73,10 +74,23 @@ public class GalleryFragment extends Fragment {
                 //MediaStore.MediaColumns.DATA - 파일의 절대경로
 
                 Cursor cursor = cr.query(imageUri, projection, null, null, MediaStore.MediaColumns.DATE_ADDED + " desc");
+=======
+            while(!permissionSupport.checkEachPermission(permissions)){
+                Toast.makeText(getContext(), "기능 사용을 위한 권한 동의가 필요합니다.", Toast.LENGTH_SHORT).show();
+                permissionSupport.requestPermission();
+            }
+            Uri imageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+            String[] projection = new String[]{MediaStore.MediaColumns.DATA, MediaStore.MediaColumns.DISPLAY_NAME};
+            //MediaStore.MediaColumns.DATA - 파일의 절대경로
+
+            Cursor cursor = cr.query(imageUri, projection, null, null, MediaStore.MediaColumns.DATE_ADDED + " desc");
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
             /* getContentResolver 리졸버가 쿼리문을 날리는 메소드이며 uri과 스토리지 접근 권한이 필요
             uri - 데이터를 가져오는 경로 projection - 가져올 컬럼의 이름 배열
              */
 
+<<<<<<< HEAD
                 if (cursor != null) {
                     int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA); // getColumnlndexOrThrow - projection에 추가했던 원하는 컬럼값의 인덱스를 받음, 인자값으로 인덱스를 구하고 싶은 컬럼명 기입
                     int columnDisplayname = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME);
@@ -85,11 +99,22 @@ public class GalleryFragment extends Fragment {
                         //int lastIndex;
                         String absolutePathOfImage = cursor.getString(columnIndex);
                         String nameOfFile = cursor.getString(columnDisplayname);
+=======
+            if (cursor != null) {
+                int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA); // getColumnlndexOrThrow - projection에 추가했던 원하는 컬럼값의 인덱스를 받음, 인자값으로 인덱스를 구하고 싶은 컬럼명 기입
+                int columnDisplayname = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME);
+
+                while (cursor.moveToNext()) {
+                    //int lastIndex;
+                    String absolutePathOfImage = cursor.getString(columnIndex);
+                    String nameOfFile = cursor.getString(columnDisplayname);
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
                     /*
                     lastIndex = absolutePathOfImage.lastIndexOf(nameOfFile);
                     lastIndex = lastIndex >= 0 ? lastIndex : nameOfFile.length() - 1;
                     */
 
+<<<<<<< HEAD
                         if (!TextUtils.isEmpty(absolutePathOfImage)) {
                             imageList.add(absolutePathOfImage);
                             System.out.println(absolutePathOfImage);
@@ -100,14 +125,36 @@ public class GalleryFragment extends Fragment {
                 }
                 cursor.close();
                 return imageList;
+=======
+                    if (!TextUtils.isEmpty(absolutePathOfImage)) {
+                        imageList.add(absolutePathOfImage);
+                        System.out.println(absolutePathOfImage);
+                    }
+                }
+            } else {
+                System.out.println("NULL");
+            }
+            cursor.close();
+            return imageList;
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
 
 
         } catch (NullPointerException e) {
             imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
             imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
             imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
+<<<<<<< HEAD
 
         }
         return imageList;
 }
+=======
+            imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
+            imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
+            imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
+
+        }
+        return imageList;
+    }
+>>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
 }

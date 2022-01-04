@@ -16,6 +16,8 @@ import org.w3c.dom.Text;
 public class MbtiQ7 extends Fragment implements View.OnClickListener{
     public TextView answer1;
     public TextView answer2;
+    public Button backbutton;
+    public String pastselection;
     MainActivity activity;
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
@@ -36,9 +38,17 @@ public class MbtiQ7 extends Fragment implements View.OnClickListener{
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_mbti_q7, container, false);
         answer1 = rootView.findViewById(R.id.Q7A1);
         answer2 = rootView.findViewById(R.id.Q7A2);
-
+        backbutton = rootView.findViewById(R.id.button7);
+        backbutton.setOnClickListener(this);
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);
+        if(activity.mymbti.backward == true){
+            activity.mymbti.managing_data(pastselection,"Undo");
+            System.out.println("Undo\n");
+            activity.mymbti.backward = false;
+        }
+        activity.mymbti.print();
+        activity.mymbti.mbti_page = 7;
         return rootView;
 
     }
@@ -46,11 +56,17 @@ public class MbtiQ7 extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q7A1:
-                activity.mymbti.incrementSN("S");
+                activity.mymbti.managing_data("S", "Do");
+                pastselection = "S";
                 break;
             case R.id.Q7A2:
-                activity.mymbti.incrementSN("N");
+                activity.mymbti.managing_data("N", "Do");
+                pastselection = "N";
                 break;
+            case R.id.button7:
+                activity.mymbti.backward = true;
+                activity.replaceFragment(activity.mbtiQ6);
+                return;
         }
         activity.replaceFragment(activity.mbtiQ8);
     }
