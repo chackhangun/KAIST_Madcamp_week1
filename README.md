@@ -104,6 +104,8 @@
                     va.start();
         ```
         
+        https://github.com/chackhangun/immersion_camp/issues/16#issue-1093241837
+        
         more  버튼을 누르면 해당 연락처를 modify, delete할 수 있도록 레이아웃이 하나 더 나타난다. 이 레이아웃의 구현은 setvisibility를 이용해서 구현했다. more 버튼을 누른 상태에서 다른 아이템을 누르면 modify/delete 레이아웃도 함께 사라져야 하므로, 이를 구분할 수 있는 reference로 boolean  타입인 check을 사용한다.
         
         ```java
