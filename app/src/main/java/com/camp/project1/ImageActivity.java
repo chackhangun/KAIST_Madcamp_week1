@@ -19,7 +19,6 @@ public class ImageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo_detail);
         
         imageView = (ImageView) findViewById(R.id.image);
-       // String imagePath = getIntent().getParcelableExtra(EXTRA_PHOTO);
         String imagePath = getIntent().getStringExtra(EXTRA_PHOTO);
         
         Glide.with(this)

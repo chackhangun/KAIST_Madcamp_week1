@@ -106,9 +106,6 @@ public class GalleryFragment extends Fragment {
             imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
             imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
             imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
-            imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
-            imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
-            imageList.add("/storage/emulated/0/DCIM/Camera/IMG_20220101_102247.jpg");
 
         }
         return imageList;

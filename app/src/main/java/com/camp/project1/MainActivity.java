@@ -87,15 +87,7 @@ public class MainActivity extends AppCompatActivity {
         mbtiQ12 = new MbtiQ12();
         mbtiResult = new MbtiResult();
         mymbti = new MBTI();
-/*
-        if(permission_check == false){
-            getpermission();
-            permission_check = true;
-        }*/
-        /*
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CONTACTS) != PackageManager.PERMISSION_GRANTED){
 
-        }*/
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
     }
