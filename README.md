@@ -378,6 +378,8 @@
                 }
         ```
         
+        ![tap](https://user-images.githubusercontent.com/32477937/148051409-d84909d9-a1a8-4431-be63-311f84158c47.gif)
+
     - 카카오톡 공유하기
         
         kakao sdk v2 부터 java에서 kakao link를 지원하지않는다. 따라서 카카오 dev에서 해당 앱의 각 키들을 설정해주고 kakaolink함수를 구현해야한다. 공유하기 이미지로 전송될 이미지의 url이 필요하다. 테스트 결과 이미지들은 모두 무료 호스팅 사이트인 imgur.com에 업로드 시켜놓았다.
