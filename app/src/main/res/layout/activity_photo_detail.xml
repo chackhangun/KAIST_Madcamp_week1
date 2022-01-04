@@ -6,24 +6,11 @@
     android:orientation="vertical"
     android:background="#000000">
 
-    <ScrollView
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
 
-        <LinearLayout
-            android:id="@+id/activity_character"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"/>
-
-        </LinearLayout>
-    </ScrollView>
 </LinearLayout>

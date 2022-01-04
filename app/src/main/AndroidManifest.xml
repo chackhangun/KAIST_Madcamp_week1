@@ -10,11 +10,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
-=======
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
->>>>>>> parent of 9f42a28... add image zoom
 
 
     <application
@@ -24,7 +19,7 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name="com.camp.project1.ImageActivity"></activity>
+        <activity android:name="com.camp.project1.gallery.ImageActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
