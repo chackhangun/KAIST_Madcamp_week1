@@ -16,13 +16,4 @@ public class Data {
     public String getNumber(){
         return this.number;
     }
-    /*
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public void setNumber(String number){
-        this.number = number;
-    }
-     */
 }

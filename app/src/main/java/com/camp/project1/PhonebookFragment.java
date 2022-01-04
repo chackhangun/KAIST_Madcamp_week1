@@ -64,8 +64,8 @@ public class PhonebookFragment extends Fragment{
 
 
         recyclerView.setAdapter(recyclerAdapter);
-
-        datalist = getContacts(ct);//ArrayList<Data>를 반환
+        datalist = new ArrayList<>();
+        //datalist = getContacts(ct);//ArrayList<Data>를 반환
         recyclerAdapter.addList(datalist);
 
         String[] columns = new String[]{"_id", "name", "phone"};
