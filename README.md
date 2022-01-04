@@ -55,7 +55,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) 
+     ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) 
 
         
     - Recycler Adapter
@@ -175,7 +175,7 @@
                             break;
         ```
         
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
+    ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
 
 # Second Tap: Gallery
 :heavy_check_mark: tab2는 Android 기기의 갤러리에 존재하는 모든 사진 파일을 보여주며,
