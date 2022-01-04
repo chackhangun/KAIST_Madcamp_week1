@@ -55,7 +55,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-        <p align="center">![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) 
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
 
         
     - Recycler Adapter
@@ -172,8 +172,27 @@
         
 
 # Second Tap: Gallery
+:heavy_check_mark: tab2는 Android 기기의 갤러리에 존재하는 모든 사진 파일을 보여주며,
+:heavy_check_mark: 사진을 클릭했을 때 선택된 사진의 원본을 볼 수 있고,
+:heavy_check_mark: 이미지 Zoon-in & Zoom-out 이 가능하도록 구현하였습니다.
+### 1. **갤러리 구현**
 
-![갤러리](https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif){: .align-center}
+- `RecyclerView`와 `GridLayout` 사용하여 레이아웃을 구현하였습니다. 안드로이드 이미지 Uri로 파일을 얻기 위해 ContentResolver를 이용해 이미지 경로를 받아서 ArrayList 에 담았으며, `[Glide` 라이브러리](https://github.com/bumptech/glide) 사용하여 이미지를 load 하는 방식으로 갤러리를 구현하였습니다.
+
+![갤러리](https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif)
+
+### 2. 선택한 이미지 크게 보여주기
+
+- GalleryAdapter에서 Intent를 활용해 선택한 이미지를 ImageActivity로 전달하였고, Glide를 이용해 이미지를 보여주었습니다.
+
+![선택사진보여주기](https://user-images.githubusercontent.com/43024179/148047965-797c9e9d-d52c-4a8b-bf8e-8c75b4b932cd.gif)
+
+### 3. 사진 Zoom-in & out
+
+- [PhotoView](https://github.com/Baseflow/PhotoView) ****라이브러리를 활용하여 사진을 확대 및 축소할 수 있는 기능을 추가했습니다.
+
+![줌인아웃](https://user-images.githubusercontent.com/43024179/148047973-7a97af65-2a57-4519-a1fd-b5ee14801a94.gif){: .align-center}
+
 
 # Third Tap: MBTI Test
 
