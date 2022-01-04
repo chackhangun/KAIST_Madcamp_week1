@@ -73,8 +73,6 @@
         android:background="@drawable/select_text"
         android:elevation="20dp"
         android:textColor="@drawable/text_click"/>
-<<<<<<< HEAD
-=======
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
@@ -88,7 +86,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Q4A2" />/>
 
->>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

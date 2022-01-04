@@ -32,10 +32,7 @@ public class PermissionSupport {
         this.activity = _activity;
         this.context = _context;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
     public boolean checkEachPermission(String[] permissions) { //지정한 퍼미션 확인
         int result;
         permissionList = new ArrayList<>();

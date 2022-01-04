@@ -49,7 +49,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+>>>>>>> 2312da33558877799fe67831badd200e41cc8409
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
@@ -76,7 +80,24 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/MbtiResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/MbtiResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/RecyclerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/RecyclerAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/itemview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/itemview.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/MbtiQ1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/camp/project1/MbtiQ1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/mbti_question.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/mbti_question.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_photo_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_photo_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_phonebook.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_phonebook.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/mbti_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/mbti_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+>>>>>>> parent of 9f42a28... add image zoom
+=======
 >>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
+>>>>>>> 2312da33558877799fe67831badd200e41cc8409
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,9 +182,16 @@
 >>>>>>> cc0739fcc50dee3a4ddb85fc04dea0fb4b9ad6cf
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <key name="CopyClassDialog.RECENTS_KEY">
+=======
     <key name="android.template.542539216">
+>>>>>>> 2312da33558877799fe67831badd200e41cc8409
       <recent name="com.camp.project1" />
     </key>
+=======
+>>>>>>> parent of 9f42a28... add image zoom
     <key name="MoveFile.RECENT_KEYS">
 <<<<<<< HEAD
       <recent name="C:\Users\LGPC\Desktop\Flutter\madcampProject\immersion_camp_merge\immersion_camp\app\src\main\res\font" />
