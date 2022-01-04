@@ -173,6 +173,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     }
                     else{
                         option.setVisibility(option.GONE);
+                        check = false;
                     }
                     break;
 
@@ -204,7 +205,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         }
                     }
                     activity.getContentResolver().delete(Uri.parse(MainActivity.PROVIDER_URI),"_id ="+ String.valueOf(id) ,null);
-                    //((MainActivity)activity).replaceFragment(((MainActivity) activity).phonebookFragment);
                     Intent intent1 = new Intent(context, MainActivity.class);
                     activity.startActivity(intent1);
                     break;

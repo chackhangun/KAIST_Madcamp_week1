@@ -18,7 +18,6 @@ public class MbtiQ2 extends Fragment implements View.OnClickListener{
     public TextView answer2;
     public Button backbutton;
     public String pastselection;
-    public Boolean check;
     MainActivity activity;
 
     @Override
@@ -31,7 +30,6 @@ public class MbtiQ2 extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) { //초기화 리소스들
         super.onCreate(savedInstanceState);
-        check = false;
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
 
@@ -49,9 +47,10 @@ public class MbtiQ2 extends Fragment implements View.OnClickListener{
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);
 
-        if(check == true){
-            activity.mymbti.incrementEI(pastselection,"Undo");
+        if(activity.mymbti.backward == true){
+            activity.mymbti.managing_data(pastselection,"Undo");
             System.out.println("Undo\n");
+            activity.mymbti.backward = false;
         }
         activity.mymbti.print();
         return rootView;
@@ -61,18 +60,18 @@ public class MbtiQ2 extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q2A1:
-                activity.mymbti.incrementSN("S", "Do");
+                activity.mymbti.managing_data("S", "Do");
                 pastselection = "S";
                 break;
             case R.id.Q2A2:
-                activity.mymbti.incrementSN("N", "Do");
+                activity.mymbti.managing_data("N", "Do");
                 pastselection = "N";
                 break;
             case R.id.button2:
+                activity.mymbti.backward = true;
                 activity.replaceFragment(activity.mbtiQ1);
                 return;
         }
-        check = true;
         activity.replaceFragment(activity.mbtiQ3);
     }
 }

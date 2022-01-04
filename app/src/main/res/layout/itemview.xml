@@ -102,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:visibility="gone">
+        >
 
         <Button
             android:id="@+id/modify"
@@ -118,7 +118,7 @@
             android:layout_weight="1"
             android:backgroundTint="#FF0000"
             android:text="DELETE"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

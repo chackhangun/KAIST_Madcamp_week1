@@ -48,6 +48,7 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
         mbti = mainActivity.mymbti.getMBTItype();
         System.out.println("The result is = "+mbti);
         setimage(mbti);
+        mainActivity.mymbti.mbti_page = 13;
         return rootview;
     }
 
@@ -81,6 +82,8 @@ public class MbtiResult extends Fragment implements View.OnClickListener {
                 // 템플릿 밸리데이션과 쿼터 체크가 성공적으로 끝남. 톡에서 정상적으로 보내졌는지 보장은 할 수 없다. 전송 성공 유무는 서버콜백 기능을 이용하여야 한다.
             }
         });
+        mainActivity.mymbti.mbti_page = 0;
+        mainActivity.mymbti.backward = false;
     }
 
     public void setimage(String mbti){

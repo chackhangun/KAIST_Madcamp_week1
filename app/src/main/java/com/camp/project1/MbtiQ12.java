@@ -47,6 +47,7 @@ public class MbtiQ12 extends Fragment implements View.OnClickListener{
         answer2.setOnClickListener(this);
 
         activity.mymbti.print();
+        activity.mymbti.mbti_page = 12;
         return rootView;
 
     }
@@ -54,12 +55,13 @@ public class MbtiQ12 extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q12A1:
-                activity.mymbti.incrementPJ("P", "Do");
+                activity.mymbti.managing_data("P", "Do");
                 break;
             case R.id.Q12A2:
-                activity.mymbti.incrementPJ("J", "Do");
+                activity.mymbti.managing_data("J", "Do");
                 break;
             case R.id.button12:
+                activity.mymbti.backward = true;
                 activity.replaceFragment(activity.mbtiQ11);
                 return;
         }

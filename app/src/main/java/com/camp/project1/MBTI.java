@@ -5,78 +5,77 @@ public class MBTI {
     public int[] SN;
     public int[] TF;
     public int[] PJ;
+    public int mbti_page;
     String mbtitype;
+    public Boolean backward;
 
     public MBTI(){
         EI = new int[] {0,0};
         SN = new int[] {0,0};
         TF = new int[] {0,0};
         PJ = new int[] {0,0};
+        mbti_page = 0;
         mbtitype = null;
+        backward = false;
     }
 
-    public void incrementEI(String type, String check){
+    public void managing_data(String type, String check){
         if(check == "Do"){
-            if (type == "E"){
-                this.EI[0]++;
-            }else{
-                this.EI[1]++;
+            switch (type){
+                case "E":
+                    this.EI[0]++;
+                    break;
+                case "I":
+                    this.EI[1]++;
+                    break;
+                case "S":
+                    this.SN[0]++;
+                    break;
+                case "N":
+                    this.SN[1]++;
+                    break;
+                case "T":
+                    this.TF[0]++;
+                    break;
+                case "F":
+                    this.TF[1]++;
+                    break;
+                case "P":
+                    this.PJ[0]++;
+                    break;
+                case "J":
+                    this.PJ[1]++;
+                    break;
             }
+            mbti_page++;
         }else{
-            if (type == "E"){
-                this.EI[0]--;
-            }else{
-                this.EI[1]--;
+            switch (type){
+                case "E":
+                    this.EI[0]--;
+                    break;
+                case "I":
+                    this.EI[1]--;
+                    break;
+                case "S":
+                    this.SN[0]--;
+                    break;
+                case "N":
+                    this.SN[1]--;
+                    break;
+                case "T":
+                    this.TF[0]--;
+                    break;
+                case "F":
+                    this.TF[1]--;
+                    break;
+                case "P":
+                    this.PJ[0]--;
+                    break;
+                case "J":
+                    this.PJ[1]--;
+                    break;
             }
-        }
-
-    }
-
-    public void incrementSN(String type, String check){
-        if(check == "Do") {
-            if (type == "S") {
-                this.SN[0]++;
-            } else {
-                this.SN[1]++;
-            }
-        }else{
-            if (type == "S") {
-                this.SN[0]--;
-            } else {
-                this.SN[1]--;
-            }
-        }
-    }
-
-    public void incrementTF(String type, String check){
-        if(check == "Do") {
-            if (type == "T") {
-                this.TF[0]++;
-            } else {
-                this.TF[1]++;
-            }
-        }else{
-            if (type == "T") {
-                this.TF[0]--;
-            } else {
-                this.TF[1]--;
-            }
-        }
-    }
-
-    public void incrementPJ(String type, String check){
-        if(check == "Do") {
-            if (type == "P") {
-                this.PJ[0]++;
-            } else {
-                this.PJ[1]++;
-            }
-        }else{
-            if (type == "P") {
-                this.PJ[0]--;
-            } else {
-                this.PJ[1]--;
-            }
+            mbti_page--;
         }
     }
 

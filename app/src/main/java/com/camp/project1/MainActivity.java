@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
     public String name;
     public String number;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,9 +102,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void after_permission_check(){
-
-    }
     public void onRequestPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         if(!permission.permissionResult(requestCode, permissions, grantResults)){
             Toast.makeText(this, "기능 사용을 위한 권한 동의가 필요합니다.", Toast.LENGTH_SHORT).show();
@@ -121,7 +120,51 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, galleryFragment).commit();
                     break;
                 case R.id.item_calendar:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
+                    switch(mymbti.mbti_page){
+                        case 0:
+                            mymbti = new MBTI();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
+                            break;
+                        case 1:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
+                            break;
+                        case 2:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ2).commit();
+                            break;
+                        case 3:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ3).commit();
+                            break;
+                        case 4:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ4).commit();
+                            break;
+                        case 5:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ5).commit();
+                            break;
+                        case 6:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ6).commit();
+                            break;
+                        case 7:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ7).commit();
+                            break;
+                        case 8:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ8).commit();
+                            break;
+                        case 9:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ9).commit();
+                            break;
+                        case 10:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ10).commit();
+                            break;
+                        case 11:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ11).commit();
+                            break;
+                        case 12:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ12).commit();
+                            break;
+                        case 13:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiResult).commit();
+                            break;
+                    }
                     break;
             }
             return true;

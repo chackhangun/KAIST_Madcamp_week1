@@ -18,7 +18,6 @@ public class MbtiQ7 extends Fragment implements View.OnClickListener{
     public TextView answer2;
     public Button backbutton;
     public String pastselection;
-    public Boolean check;
     MainActivity activity;
     @Override
     public void onAttach(Context context){ //fragment를 activity에 attach할때 호
@@ -30,7 +29,6 @@ public class MbtiQ7 extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) { //초기화 리소스들
         super.onCreate(savedInstanceState);
-        check = false;
     }
     // view 객체 얻어서 초기화/ layout inflate하는곳출
 
@@ -44,11 +42,13 @@ public class MbtiQ7 extends Fragment implements View.OnClickListener{
         backbutton.setOnClickListener(this);
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);
-        if(check == true){
-            activity.mymbti.incrementEI(pastselection,"Undo");
+        if(activity.mymbti.backward == true){
+            activity.mymbti.managing_data(pastselection,"Undo");
             System.out.println("Undo\n");
+            activity.mymbti.backward = false;
         }
         activity.mymbti.print();
+        activity.mymbti.mbti_page = 7;
         return rootView;
 
     }
@@ -56,18 +56,18 @@ public class MbtiQ7 extends Fragment implements View.OnClickListener{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.Q7A1:
-                activity.mymbti.incrementSN("S", "Do");
+                activity.mymbti.managing_data("S", "Do");
                 pastselection = "S";
                 break;
             case R.id.Q7A2:
-                activity.mymbti.incrementSN("N", "Do");
+                activity.mymbti.managing_data("N", "Do");
                 pastselection = "N";
                 break;
             case R.id.button7:
+                activity.mymbti.backward = true;
                 activity.replaceFragment(activity.mbtiQ6);
                 return;
         }
-        check = true;
         activity.replaceFragment(activity.mbtiQ8);
     }
 }
