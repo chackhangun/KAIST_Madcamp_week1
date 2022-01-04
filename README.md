@@ -175,7 +175,7 @@
                             break;
         ```
         
-    ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
 
 
 # Second Tap: Gallery
