@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.camp.project1.gallery.GalleryFragment;
+import com.camp.project1.mbti.MbtiMain;
 import com.camp.project1.mbti.MbtiQ1;
 import com.camp.project1.mbti.MbtiQ10;
 import com.camp.project1.mbti.MbtiQ11;
@@ -50,6 +51,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
     private com.camp.project1.PhonebookFragment phonebookFragment;
     private GalleryFragment galleryFragment;
+    public MbtiMain mbtiMain;
     public MbtiQ1 mbtiQ1;
     public MbtiQ2 mbtiQ2;
     public MbtiQ3 mbtiQ3;
@@ -71,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String name;
     public Boolean tap3_check = false;
+    public Boolean second_check = false;
 
 
     @Override
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         phonebookFragment = new PhonebookFragment();
         galleryFragment = new GalleryFragment();
+        mbtiMain = new MbtiMain();
         mbtiQ1 = new MbtiQ1();
         mbtiQ2 = new MbtiQ2();
         mbtiQ3 = new MbtiQ3();
@@ -129,64 +133,69 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()){
                 case R.id.item_phonebook:
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, phonebookFragment).commit();
+                    second_check = true;
                     break;
                 case R.id.item_gallery:
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, galleryFragment).commit();
+                    second_check = true;
                     break;
                 case R.id.item_calendar:
                     System.out.println(mymbti.mbti_page);
-                    if(tap3_check == false){
-                        switch (mymbti.mbti_page) {
-                            case 0:
-                                mymbti = new MBTI();
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
-                                break;
-                            case 1:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
-                                break;
-                            case 2:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ2).commit();
-                                break;
-                            case 3:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ3).commit();
-                                break;
-                            case 4:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ4).commit();
-                                break;
-                            case 5:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ5).commit();
-                                break;
-                            case 6:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ6).commit();
-                                break;
-                            case 7:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ7).commit();
-                                break;
-                            case 8:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ8).commit();
-                                break;
-                            case 9:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ9).commit();
-                                break;
-                            case 10:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ10).commit();
-                                break;
-                            case 11:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ11).commit();
-                                break;
-                            case 12:
-                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ12).commit();
-                                break;
-                            case 13:
+                    switch (mymbti.mbti_page) {
+                        case 0:
+                            mymbti = new MBTI();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiMain).commit();
+                            break;
+                        case 1:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
+                            break;
+                        case 2:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ2).commit();
+                            break;
+                        case 3:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ3).commit();
+                            break;
+                        case 4:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ4).commit();
+                            break;
+                        case 5:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ5).commit();
+                            break;
+                        case 6:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ6).commit();
+                            break;
+                        case 7:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ7).commit();
+                            break;
+                        case 8:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ8).commit();
+                            break;
+                        case 9:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ9).commit();
+                            break;
+                        case 10:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ10).commit();
+                            break;
+                        case 11:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ11).commit();
+                            break;
+                        case 12:
+                            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ12).commit();
+                            break;
+                        case 13:
+                            if(tap3_check == false | second_check == true){
                                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiResult).commit();
-                                break;
-                        }
+                                second_check = false;
+                            }
+                            else{
+                                mymbti = new MBTI();
+                                tap3_check = false;
+                                getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiMain).commit();
+                            }
+                            break;
                     }
-                    else{
-                        mymbti = new MBTI();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, mbtiQ1).commit();
-                        tap3_check = false;
-                    }
+
+
             }
             return true;
         }

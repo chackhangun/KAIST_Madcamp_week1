@@ -51,6 +51,7 @@ public class MbtiQ3 extends Fragment implements View.OnClickListener{
             activity.mymbti.backward = false;
         }
         activity.mymbti.print();
+        activity.mymbti.mbti_page = 3;
         return rootView;
 
     }
