@@ -71,6 +71,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public void setActivity(Activity act){
         activity = act;
     }
+
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView photo;
         TextView name;

@@ -60,6 +60,6 @@ public class ContactDBManager extends SQLiteOpenHelper {
     }
 
     public int deleteData(String id){
-        return getWritableDatabase().delete(TABLE_CONTACT, "ID = ?", new String[] {id});
+        return getWritableDatabase().delete(TABLE_CONTACT, "_id = ?", new String[] {id});
     }
 }

@@ -38,29 +38,7 @@ public class AddContactActivity extends AppCompatActivity implements View.OnClic
             case R.id.save:
                 String itemname = name.getText().toString();
                 String itemnumber = number.getText().toString();
-                /*
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(ContactsContract.RawContacts.CONTACT_ID, 0);
-                contentValues.put(ContactsContract.RawContacts.AGGREGATION_MODE, ContactsContract.RawContacts.AGGREGATION_MODE_DISABLED);
-                Uri rawContactUri = getContentResolver().insert(ContactsContract.RawContacts.CONTENT_URI, contentValues);
-                long rawContactId = ContentUris.parseId(rawContactUri);
 
-                contentValues.clear();
-                contentValues.put(ContactsContract.Data.RAW_CONTACT_ID, rawContactId);
-                contentValues.put(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
-                contentValues.put(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE);
-                contentValues.put(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,itemname);
-                contentValues.put(ContactsContract.CommonDataKinds.Phone.NUMBER, itemnumber);
-                Uri dataUri = getContentResolver().insert(ContactsContract.Data.CONTENT_URI, contentValues);
-                startActivity(new Intent(this, MainActivity.class));
-                 */
-                /*
-                Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
-                intent.setType(ContactsContract.RawContacts.CONTENT_TYPE) ;
-                intent.putExtra(ContactsContract.Intents.Insert.NAME, itemname);
-                intent.putExtra(ContactsContract.Intents.Insert.PHONE, itemnumber);
-                startActivity(new Intent(this, MainActivity.class));
-                */
                 ContentValues newContact = new ContentValues();
                 newContact.put("name", itemname);
                 newContact.put("phone", itemnumber);
