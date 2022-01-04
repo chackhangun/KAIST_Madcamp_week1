@@ -58,7 +58,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-       ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) 
+       <p align="center"><img src=https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif></p>
 
         
     - Recycler Adapter
@@ -124,7 +124,7 @@
         ```
            
 
-         ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif)
+         <p align="center"><img src=https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif></p>
 
     - Delete
         
@@ -157,7 +157,7 @@
                             break;
                     }
         ```
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
+        <p align="center"><img src=https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif></p>
         
     - Call / SMS
         
@@ -178,7 +178,7 @@
                             break;
         ```
         
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
+        <p align="center"><img src=https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif></p>
 
 
 # Second Tap: Gallery
@@ -192,20 +192,20 @@
 
 - `RecyclerView`와 `GridLayout` 사용하여 레이아웃을 구현. 안드로이드 이미지 Uri로 파일을 얻기 위해 ContentResolver를 이용해 이미지 경로를 받아서 ArrayList 에 담았으며, [Glide 라이브러리](https://github.com/bumptech/glide) 사용하여 이미지를 load 하는 방식으로 갤러리를 구현하였다.
 
-<center><img src=https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif width="300" height="600"/></center>
+<p align="center"><img src=https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif width="300" height="600"/></p>
 
 
 ### 2. 선택한 이미지 크게 보여주기
 
 - GalleryAdapter에서 Intent를 활용해 선택한 이미지를 ImageActivity로 전달하였고, Glide를 이용해 이미지를 보여주었다.
 
-<center><img src=https://user-images.githubusercontent.com/43024179/148047965-797c9e9d-d52c-4a8b-bf8e-8c75b4b932cd.gif width="300" height="600"/></center>
+<p align="center"><img src=https://user-images.githubusercontent.com/43024179/148047965-797c9e9d-d52c-4a8b-bf8e-8c75b4b932cd.gif width="300" height="600"/></p>
 
 ### 3. 사진 Zoom-in & out
 
 - [PhotoView](https://github.com/Baseflow/PhotoView) 라이브러리를 활용하여 사진을 확대 및 축소할 수 있는 기능을 추가했다.
 
-<center><img src=https://user-images.githubusercontent.com/43024179/148047973-7a97af65-2a57-4519-a1fd-b5ee14801a94.gif width="300" height="600"></center>
+<p align="center"><img src=https://user-images.githubusercontent.com/43024179/148047973-7a97af65-2a57-4519-a1fd-b5ee14801a94.gif width="300" height="600"></p>
 
 
 # Third Tap: MBTI Test
@@ -381,7 +381,7 @@
                 }
         ```
         
-        ![tap](https://user-images.githubusercontent.com/32477937/148051409-d84909d9-a1a8-4431-be63-311f84158c47.gif)
+        <p align="center"><img src=https://user-images.githubusercontent.com/32477937/148051409-d84909d9-a1a8-4431-be63-311f84158c47.gif></p>
 
     - 카카오톡 공유하기
         
@@ -414,5 +414,5 @@
                         break;
         ```
         
-        <center><img src=https://user-images.githubusercontent.com/32477937/148052063-ecbd638f-9e84-4fa1-bc6e-f6896565ee59.gif width="300" height="600"/></center>
+        <p align="center"><img src=https://user-images.githubusercontent.com/32477937/148052063-ecbd638f-9e84-4fa1-bc6e-f6896565ee59.gif width="300" height="600"/></p>
 
