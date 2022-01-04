@@ -55,7 +55,8 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif)
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
+
         
     - Recycler Adapter
         
