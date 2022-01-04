@@ -55,7 +55,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-        https://github.com/chackhangun/immersion_camp/issues/13#issue-1093230826
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif)
         
     - Recycler Adapter
         
