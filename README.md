@@ -55,7 +55,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) 
 
         
     - Recycler Adapter
@@ -104,8 +104,8 @@
                     va.start();
         ```
         
-        https://github.com/chackhangun/immersion_camp/issues/16#issue-1093241837
-        
+    ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif)
+
         more  버튼을 누르면 해당 연락처를 modify, delete할 수 있도록 레이아웃이 하나 더 나타난다. 이 레이아웃의 구현은 setvisibility를 이용해서 구현했다. more 버튼을 누른 상태에서 다른 아이템을 누르면 modify/delete 레이아웃도 함께 사라져야 하므로, 이를 구분할 수 있는 reference로 boolean  타입인 check을 사용한다.
         
         ```java
@@ -152,6 +152,7 @@
                             break;
                     }
         ```
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
         
     - Call / SMS
         
@@ -172,6 +173,7 @@
                             break;
         ```
         
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049852-c1a8ec53-30a4-493b-a524-2b4bf1935e7d.gif)
 
 # Second Tap: Gallery
 :heavy_check_mark: tab2는 Android 기기의 갤러리에 존재하는 모든 사진 파일을 보여주며,
