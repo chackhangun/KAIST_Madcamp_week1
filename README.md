@@ -55,7 +55,7 @@
                         startActivity(new Intent(this, MainActivity.class));
                         break;
         ```
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) 
+        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048583-932cc88c-997d-431d-bdb7-08706606c93f.gif) ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
 
         
     - Recycler Adapter
@@ -117,11 +117,8 @@
                                 check = false;
                             }
                             break;
-          
         ```
         
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif)
-
     - Delete
         
         Delete를 누르게 되면 ViewHolder의 TextView에 있는 name과 number를 string으로 가져온다. 그 후 해당 name의 id를 찾는다. cursor와 for loop을 사용하며 Textview의 name과 Contacts.db의 이름을 비교한다. 같은 값을 찾게 되면 db 테이블에서 삭제한다.
@@ -154,8 +151,6 @@
                     }
         ```
         
-        ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148048930-7e3fe9d3-c03e-4c9c-ad09-15dd55419570.gif)
-        
     - Call / SMS
         
         버튼을 클릭하면 안드로이드에서 제공하는 기본 서비스를 사용하여 전화와 메세지를 할 수 있다.
@@ -177,8 +172,29 @@
         
 
 # Second Tap: Gallery
+:heavy_check_mark: tab2는 Android 기기의 갤러리에 존재하는 모든 사진 파일을 보여주며,
 
-![갤러리](https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif){: .align-center}
+:heavy_check_mark: 사진을 클릭했을 때 선택된 사진의 원본을 볼 수 있고,
+
+:heavy_check_mark: 이미지 Zoon-in & Zoom-out 이 가능하도록 구현하였다.
+### 1. **갤러리 구현**
+
+- `RecyclerView`와 `GridLayout` 사용하여 레이아웃을 구현. 안드로이드 이미지 Uri로 파일을 얻기 위해 ContentResolver를 이용해 이미지 경로를 받아서 ArrayList 에 담았으며, `[Glide` 라이브러리](https://github.com/bumptech/glide) 사용하여 이미지를 load 하는 방식으로 갤러리를 구현하였다.
+
+<img src=https://user-images.githubusercontent.com/43024179/148047970-211009ed-bf8e-48a3-b9a1-36b0ad1548ed.gif)
+
+### 2. 선택한 이미지 크게 보여주기
+
+- GalleryAdapter에서 Intent를 활용해 선택한 이미지를 ImageActivity로 전달하였고, Glide를 이용해 이미지를 보여주었다.
+
+![선택사진보여주기](https://user-images.githubusercontent.com/43024179/148047965-797c9e9d-d52c-4a8b-bf8e-8c75b4b932cd.gif width="200" height="400"/>
+
+### 3. 사진 Zoom-in & out
+
+- [PhotoView](https://github.com/Baseflow/PhotoView) 라이브러리를 활용하여 사진을 확대 및 축소할 수 있는 기능을 추가했다.
+
+![줌인아웃](https://user-images.githubusercontent.com/43024179/148047973-7a97af65-2a57-4519-a1fd-b5ee14801a94.gif)
+
 
 # Third Tap: MBTI Test
 
