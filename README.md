@@ -291,11 +291,11 @@
         public void managing_data(String type, String check){
                 if(check == "Do"){
         ...
-        				}
-        				else{
-        						if(check == "Undo"){
-        					     switch (type){
-        						        case "E":
+        		}
+                else{
+                    if(check == "Undo"){
+                     switch (type){
+                            case "E":
         ...
         ```
         
