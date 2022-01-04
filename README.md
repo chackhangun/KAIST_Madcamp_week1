@@ -1,6 +1,4 @@
-# README.md
 # Tab-3 Android App
----
 몰입캠프 1주차 프로젝트
 ## Member
   - 최대건
