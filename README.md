@@ -104,7 +104,6 @@
                     va.start();
         ```
         
-    ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif)
 
         more  버튼을 누르면 해당 연락처를 modify, delete할 수 있도록 레이아웃이 하나 더 나타난다. 이 레이아웃의 구현은 setvisibility를 이용해서 구현했다. more 버튼을 누른 상태에서 다른 아이템을 누르면 modify/delete 레이아웃도 함께 사라져야 하므로, 이를 구분할 수 있는 reference로 boolean  타입인 check을 사용한다.
         
@@ -120,7 +119,7 @@
                             }
                             break;
         ```
-        
+           ![ezgif com-gif-maker](https://user-images.githubusercontent.com/32477937/148049706-17a38196-91fe-42af-a746-290981f696e8.gif) 
     - Delete
         
         Delete를 누르게 되면 ViewHolder의 TextView에 있는 name과 number를 string으로 가져온다. 그 후 해당 name의 id를 찾는다. cursor와 for loop을 사용하며 Textview의 name과 Contacts.db의 이름을 비교한다. 같은 값을 찾게 되면 db 테이블에서 삭제한다.
